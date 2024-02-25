@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccfl250sq6ula"
-path="res://.godot/imported/Blue.png-99b845350a8b7cb68c6cc5bba6d44eeb.ctex"
+uid="uid://bqh67xaomp6rs"
+path="res://.godot/imported/Terrain and Back Wall (32x32).png-78d826c8df8e851be0451c5f82004f50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Blue.png"
-dest_files=["res://.godot/imported/Blue.png-99b845350a8b7cb68c6cc5bba6d44eeb.ctex"]
+source_file="res://terrains/Terrain and Back Wall (32x32).png"
+dest_files=["res://.godot/imported/Terrain and Back Wall (32x32).png-78d826c8df8e851be0451c5f82004f50.ctex"]
 
 [params]
 

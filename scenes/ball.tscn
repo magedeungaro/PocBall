@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobkps43hxrcj"]
+
+[ext_resource type="Texture2D" uid="uid://gt8ree0x76f5" path="res://ball still-export.png" id="1_1u6va"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yumgv"]
+radius = 6.53103
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.84375, 1.84375)
+texture = ExtResource("1_1u6va")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.84375, 1.84375)
+shape = SubResource("CircleShape2D_yumgv")
