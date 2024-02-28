@@ -19,13 +19,13 @@ func distance_from_floor():
 func is_going_down():
 	return velocity.y > 0
 		
-func can_boost():
+func is_boost_window():
 	const THRESHOLD = 25
 	var distance = distance_from_floor()
 	return distance and is_going_down() and distance <= THRESHOLD
 
 func is_delayed_boost():
-	const THRESHOLD = 20
+	const THRESHOLD = 25
 	var distance = distance_from_floor()
 	return distance and not is_going_down() and distance <= THRESHOLD
 	
@@ -33,9 +33,6 @@ func change_velocity(modifier):
 	velocity.y = JUMP_VELOCITY * modifier
 	
 func handle_jump():
-	if Input.is_action_just_pressed("boost_jump") and can_boost():
-		boost_jump = true
-	
 	# continuously jumping
 	if is_on_floor():
 		if boost_jump:
@@ -44,8 +41,11 @@ func handle_jump():
 			change_velocity(1)
 		boost_jump = false
 	
-	if Input.is_action_just_pressed("boost_jump") and is_delayed_boost():
-		change_velocity(1.3)
+	elif Input.is_action_just_pressed("boost_jump"):
+		if is_boost_window():
+			boost_jump = true
+		if is_delayed_boost():
+			change_velocity(1.3)
 	
 
 func _physics_process(delta):
