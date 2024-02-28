@@ -27,6 +27,9 @@ func is_going_down():
 	
 func is_going_up():
 	return not is_going_down()
+	
+func is_moving_sideways():
+	return velocity.x != 0
 
 func is_boost_window(distance):
 	if not distance: return false
@@ -60,12 +63,13 @@ func handle_jump():
 		if boost_jump:
 			change_velocity(get_boost_modifier())
 			boost_jump = false
-			additional_boost = !additional_boost
+			if is_moving_sideways(): additional_boost = !additional_boost
 		else:
 			additional_boost = false
 
 func _physics_process(delta):
 	handle_jump()
+	print(velocity.x)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
