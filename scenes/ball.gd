@@ -60,7 +60,7 @@ func handle_jump():
 		if boost_jump:
 			change_velocity(get_boost_modifier())
 			boost_jump = false
-			additional_boost = true
+			additional_boost = !additional_boost
 		else:
 			additional_boost = false
 
