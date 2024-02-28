@@ -11,7 +11,7 @@ const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + 6
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var boost_jump = false
-var additional_boost = 0
+var additional_boost = false
 
 func distance_from_floor():
 	const OFFSET = 12.15
@@ -40,17 +40,18 @@ func is_calculation_window(distance):
 	return distance >= BOOST_THRESHOLD.up and distance <= CALCULATION_THRESHOLD and is_going_up()
 		
 func change_velocity(modifier):
-	velocity.y = JUMP_VELOCITY * modifier
+	var jump_velocity = JUMP_VELOCITY * modifier
+	if modifier > 1: jump_velocity /= 3
+	velocity.y += jump_velocity
 	
 func get_boost_modifier():
 	if additional_boost:
-		return 1.7
+		return 2.2
 	elif boost_jump:
-		return 1.3
+		return 1.5
 	
 func handle_jump():
 	var distance = distance_from_floor()
-	if is_going_up(): print(distance)
 	if is_on_floor(): change_velocity(1)
 	if is_boost_window(distance) and Input.is_action_just_pressed("boost_jump"):
 		boost_jump = true
