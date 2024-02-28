@@ -32,9 +32,11 @@ func handle_jump():
 	# continuously jumping
 	if is_on_floor():
 		if boost_jump:
-			change_velocity(1.3)
+			change_velocity(1.3 + (additional_boost * 0.5))
+			additional_boost += 1
 		else:
 			change_velocity(1)
+			additional_boost -= 1
 		boost_jump = false
 	
 	if Input.is_action_just_pressed("boost_jump") and is_boost_window():
@@ -42,6 +44,11 @@ func handle_jump():
 			boost_jump = true
 		else:
 			change_velocity(1.3)
+			
+	if additional_boost < 0:
+		additional_boost = 0
+	elif additional_boost > 2:
+		additional_boost = 1
 	
 
 func _physics_process(delta):
