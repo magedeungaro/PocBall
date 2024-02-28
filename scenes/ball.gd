@@ -23,32 +23,26 @@ func is_going_down():
 func is_boost_window():
 	const THRESHOLD = 25
 	var distance = distance_from_floor()
-	return distance <= THRESHOLD
+	return distance and distance <= THRESHOLD
 		
 func change_velocity(modifier):
 	velocity.y = JUMP_VELOCITY * modifier
 	
 func handle_jump():
 	# continuously jumping
-	if is_on_floor():
-		if boost_jump:
-			change_velocity(1.3 + (additional_boost * 0.5))
-			additional_boost += 1
-		else:
-			change_velocity(1)
-			additional_boost -= 1
-		boost_jump = false
+	if is_on_floor(): change_velocity(1)
 	
-	if Input.is_action_just_pressed("boost_jump") and is_boost_window():
-		if is_going_down():
-			boost_jump = true
-		else:
-			change_velocity(1.3)
-			
-	if additional_boost < 0:
-		additional_boost = 0
-	elif additional_boost > 2:
-		additional_boost = 1
+	if is_boost_window():
+		if Input.is_action_just_pressed("boost_jump"): boost_jump = true
+		if not is_going_down():
+			if boost_jump:
+				change_velocity(1.3)
+				boost_jump = false
+		
+	#if additional_boost < 0:
+		#additional_boost = 0
+	#elif additional_boost > 2:
+		#additional_boost = 1
 	
 
 func _physics_process(delta):
