@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var boost_jump = false
+var additional_boost = 0
 
 func distance_from_floor():
 	const OFFSET = 12.15
@@ -18,17 +19,12 @@ func distance_from_floor():
 		
 func is_going_down():
 	return velocity.y > 0
-		
+
 func is_boost_window():
 	const THRESHOLD = 25
 	var distance = distance_from_floor()
-	return distance and is_going_down() and distance <= THRESHOLD
-
-func is_delayed_boost():
-	const THRESHOLD = 25
-	var distance = distance_from_floor()
-	return distance and not is_going_down() and distance <= THRESHOLD
-	
+	return distance <= THRESHOLD
+		
 func change_velocity(modifier):
 	velocity.y = JUMP_VELOCITY * modifier
 	
@@ -41,10 +37,10 @@ func handle_jump():
 			change_velocity(1)
 		boost_jump = false
 	
-	elif Input.is_action_just_pressed("boost_jump"):
-		if is_boost_window():
+	if Input.is_action_just_pressed("boost_jump") and is_boost_window():
+		if is_going_down():
 			boost_jump = true
-		if is_delayed_boost():
+		else:
 			change_velocity(1.3)
 	
 
