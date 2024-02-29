@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d = %AnimatedSprite2D
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const BOOST_THRESHOLD = {
 	down = 25,
-	up = 13
+	up = 12
 }
 const THRESHOLD_OFFSET = 6
 const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + THRESHOLD_OFFSET
@@ -55,11 +57,15 @@ func get_boost_modifier():
 	
 func handle_jump():
 	var distance = distance_from_floor()
-	if is_on_floor(): change_velocity(1)
+	if is_on_floor(): 
+		change_velocity(1)
+		animated_sprite_2d.animation = "jumping"
+
 	if is_boost_window(distance) and Input.is_action_just_pressed("boost_jump"):
 		boost_jump = true
 
 	if is_calculation_window(distance):
+		animated_sprite_2d.animation = "idle"
 		if boost_jump:
 			change_velocity(get_boost_modifier())
 			boost_jump = false
