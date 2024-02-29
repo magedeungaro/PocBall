@@ -6,9 +6,9 @@ const BOOST_THRESHOLD = {
 	down = 25,
 	up = 13
 }
-const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + 6
+const THRESHOLD_OFFSET = 6
+const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + THRESHOLD_OFFSET
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var boost_jump = false
 var additional_boost = false
