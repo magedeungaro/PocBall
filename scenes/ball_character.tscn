@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cobkps43hxrcj"]
+[gd_scene load_steps=10 format=3 uid="uid://cobkps43hxrcj"]
 
-[ext_resource type="Texture2D" uid="uid://gt8ree0x76f5" path="res://assets/objects/ball still-export.png" id="1_1u6va"]
-[ext_resource type="Script" path="res://scripts/ball.gd" id="1_pq6lm"]
+[ext_resource type="Script" path="res://scripts/ball_character.gd" id="1_pq6lm"]
 [ext_resource type="Texture2D" uid="uid://cepb8kvnxyxqy" path="res://assets/objects/ball_jumping_idle1.png" id="3_a7sbb"]
 [ext_resource type="Texture2D" uid="uid://cm5fa0l7cm5ff" path="res://assets/objects/ball_jumping-Sheet.png" id="4_nuyob"]
 
@@ -52,12 +51,6 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_pq6lm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 1
-scale = Vector2(1.84375, 1.84375)
-texture = ExtResource("1_1u6va")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.84375, 1.84375)
 shape = SubResource("CircleShape2D_yumgv")
@@ -68,4 +61,4 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3wx4y")
 animation = &"jumping"
 autoplay = "idle"
-frame_progress = 0.154742
+frame_progress = 0.837825
