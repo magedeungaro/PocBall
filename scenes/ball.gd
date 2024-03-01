@@ -61,11 +61,12 @@ func handle_jump():
 		change_velocity(1)
 		animated_sprite_2d.animation = "jumping"
 
-	if is_boost_window(distance) and Input.is_action_just_pressed("boost_jump"):
-		boost_jump = true
+	if is_boost_window(distance):
+		if Input.is_action_just_pressed("boost_jump"): boost_jump = true
+	elif is_going_up(): animated_sprite_2d.animation = "idle"
+			
 
 	if is_calculation_window(distance):
-		animated_sprite_2d.animation = "idle"
 		if boost_jump:
 			change_velocity(get_boost_modifier())
 			boost_jump = false
