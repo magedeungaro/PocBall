@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d = %AnimatedSprite2D
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const BOOST_THRESHOLD = {
 	down = 25,
-	up = 13
+	up = 12
 }
-const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + 6
+const THRESHOLD_OFFSET = 6
+const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + THRESHOLD_OFFSET
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var boost_jump = false
 var additional_boost = false
@@ -55,9 +57,14 @@ func get_boost_modifier():
 	
 func handle_jump():
 	var distance = distance_from_floor()
-	if is_on_floor(): change_velocity(1)
-	if is_boost_window(distance) and Input.is_action_just_pressed("boost_jump"):
-		boost_jump = true
+	if is_on_floor(): 
+		change_velocity(1)
+		animated_sprite_2d.animation = "jumping"
+
+	if is_boost_window(distance):
+		if Input.is_action_just_pressed("boost_jump"): boost_jump = true
+	elif is_going_up(): animated_sprite_2d.animation = "idle"
+			
 
 	if is_calculation_window(distance):
 		if boost_jump:

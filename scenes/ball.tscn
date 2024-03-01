@@ -1,15 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://cobkps43hxrcj"]
+[gd_scene load_steps=11 format=3 uid="uid://cobkps43hxrcj"]
 
 [ext_resource type="Texture2D" uid="uid://gt8ree0x76f5" path="res://ball still-export.png" id="1_1u6va"]
 [ext_resource type="Script" path="res://scenes/ball.gd" id="1_pq6lm"]
+[ext_resource type="Texture2D" uid="uid://cepb8kvnxyxqy" path="res://ball_jumping_idle1.png" id="3_a7sbb"]
+[ext_resource type="Texture2D" uid="uid://cm5fa0l7cm5ff" path="res://ball_jumping-Sheet.png" id="3_y3abh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yumgv"]
 radius = 6.53103
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoq78"]
+atlas = ExtResource("3_a7sbb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3iu1"]
+atlas = ExtResource("3_y3abh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1rp2"]
+atlas = ExtResource("3_y3abh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jluq7"]
+atlas = ExtResource("3_y3abh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wx4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoq78")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3iu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1rp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jluq7")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 7.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_pq6lm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 scale = Vector2(1.84375, 1.84375)
 texture = ExtResource("1_1u6va")
@@ -17,3 +61,11 @@ texture = ExtResource("1_1u6va")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.84375, 1.84375)
 shape = SubResource("CircleShape2D_yumgv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3wx4y")
+animation = &"jumping"
+autoplay = "idle"
+frame_progress = 0.154742

@@ -52,3 +52,4 @@ left={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.137255, 0.137255, 0.137255, 1)
