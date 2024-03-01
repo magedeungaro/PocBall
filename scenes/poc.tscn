@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://02yxko47xwyi"]
 
-[ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://backgrounds/BG Image.png" id="1_3up6l"]
-[ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://terrains/Terrain (16x16).png" id="2_18323"]
-[ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://backgrounds/Back Palm Tree Left 03.png" id="2_oh13n"]
-[ext_resource type="Texture2D" uid="uid://bqh67xaomp6rs" path="res://terrains/Terrain and Back Wall (32x32).png" id="3_jyfjx"]
-[ext_resource type="Texture2D" uid="uid://thpsasgsng3o" path="res://terrains/Terrain (32x32).png" id="4_3pp3p"]
+[ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_3up6l"]
+[ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://assets/terrains/Terrain (16x16).png" id="2_18323"]
+[ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_oh13n"]
+[ext_resource type="Texture2D" uid="uid://bqh67xaomp6rs" path="res://assets/terrains/Terrain and Back Wall (32x32).png" id="3_jyfjx"]
+[ext_resource type="Texture2D" uid="uid://thpsasgsng3o" path="res://assets/terrains/Terrain (32x32).png" id="4_3pp3p"]
 [ext_resource type="PackedScene" uid="uid://cobkps43hxrcj" path="res://scenes/ball.tscn" id="6_q44xf"]
-[ext_resource type="Script" path="res://scenes/leaderboard_logic.gd" id="7_4bih5"]
+[ext_resource type="Script" path="res://scripts/leaderboard_logic.gd" id="7_4bih5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("2_18323")

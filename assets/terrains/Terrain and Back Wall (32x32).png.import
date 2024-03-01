@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm5fa0l7cm5ff"
-path="res://.godot/imported/ball_jumping-Sheet.png-564cd1ecde64fbc331b31f80e8c4a9a6.ctex"
+uid="uid://bqh67xaomp6rs"
+path="res://.godot/imported/Terrain and Back Wall (32x32).png-1e7bc75abd021991c33753adc8da2d64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ball_jumping-Sheet.png"
-dest_files=["res://.godot/imported/ball_jumping-Sheet.png-564cd1ecde64fbc331b31f80e8c4a9a6.ctex"]
+source_file="res://assets/terrains/Terrain and Back Wall (32x32).png"
+dest_files=["res://.godot/imported/Terrain and Back Wall (32x32).png-1e7bc75abd021991c33753adc8da2d64.ctex"]
 
 [params]
 

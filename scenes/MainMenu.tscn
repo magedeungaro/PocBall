@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwnj3iiowexyq"]
 
-[ext_resource type="Texture2D" uid="uid://ccfl250sq6ula" path="res://backgrounds/Blue.png" id="1_gchwu"]
+[ext_resource type="Texture2D" uid="uid://ccfl250sq6ula" path="res://assets/backgrounds/Blue.png" id="1_gchwu"]
 
 [node name="MainMenu" type="Node"]
 

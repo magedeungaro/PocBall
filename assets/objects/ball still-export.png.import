@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxrdxfc1ejahy"
-path="res://.godot/imported/Back Palm Tree Left 03.png-cdb96d12c9e19139f7adfbbdeb013385.ctex"
+uid="uid://gt8ree0x76f5"
+path="res://.godot/imported/ball still-export.png-2b6de3c6e2e08e85caa9343ba920bb71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgrounds/Back Palm Tree Left 03.png"
-dest_files=["res://.godot/imported/Back Palm Tree Left 03.png-cdb96d12c9e19139f7adfbbdeb013385.ctex"]
+source_file="res://assets/objects/ball still-export.png"
+dest_files=["res://.godot/imported/ball still-export.png-2b6de3c6e2e08e85caa9343ba920bb71.ctex"]
 
 [params]
 

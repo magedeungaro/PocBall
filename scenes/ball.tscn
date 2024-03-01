@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://cobkps43hxrcj"]
 
-[ext_resource type="Texture2D" uid="uid://gt8ree0x76f5" path="res://ball still-export.png" id="1_1u6va"]
-[ext_resource type="Script" path="res://scenes/ball.gd" id="1_pq6lm"]
-[ext_resource type="Texture2D" uid="uid://cepb8kvnxyxqy" path="res://ball_jumping_idle1.png" id="3_a7sbb"]
-[ext_resource type="Texture2D" uid="uid://cm5fa0l7cm5ff" path="res://ball_jumping-Sheet.png" id="3_y3abh"]
+[ext_resource type="Texture2D" uid="uid://gt8ree0x76f5" path="res://assets/objects/ball still-export.png" id="1_1u6va"]
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_pq6lm"]
+[ext_resource type="Texture2D" uid="uid://cepb8kvnxyxqy" path="res://assets/objects/ball_jumping_idle1.png" id="3_a7sbb"]
+[ext_resource type="Texture2D" uid="uid://cm5fa0l7cm5ff" path="res://assets/objects/ball_jumping-Sheet.png" id="4_nuyob"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yumgv"]
 radius = 6.53103
@@ -13,15 +13,15 @@ atlas = ExtResource("3_a7sbb")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3iu1"]
-atlas = ExtResource("3_y3abh")
+atlas = ExtResource("4_nuyob")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l1rp2"]
-atlas = ExtResource("3_y3abh")
+atlas = ExtResource("4_nuyob")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jluq7"]
-atlas = ExtResource("3_y3abh")
+atlas = ExtResource("4_nuyob")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3wx4y"]
