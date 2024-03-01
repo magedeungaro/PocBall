@@ -2209,6 +2209,7 @@ layer_0/tile_data = PackedInt32Array(2621440, 786434, 9, 2621457, 196610, 1, 262
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_q44xf")]
 position = Vector2(20, 612)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
 [node name="LeaderboardLogic" type="Node" parent="."]
 script = ExtResource("7_4bih5")
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
