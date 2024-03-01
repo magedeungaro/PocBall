@@ -44,8 +44,9 @@ func is_calculation_window(distance):
 	if not distance: return false
 	return distance >= BOOST_THRESHOLD.up and distance <= CALCULATION_THRESHOLD and is_going_up()
 		
-func change_velocity(modifier):
+func change_velocity(modifier = 1):
 	var jump_velocity = JUMP_VELOCITY * modifier
+	# parameters here are completely arbitrary and based solely on gameplay feel
 	if modifier > 1: jump_velocity /= 3
 	velocity.y += jump_velocity
 	
@@ -58,7 +59,7 @@ func get_boost_modifier():
 func handle_jump():
 	var distance = distance_from_floor()
 	if is_on_floor(): 
-		change_velocity(1)
+		change_velocity()
 		animated_sprite_2d.animation = "jumping"
 
 	if is_boost_window(distance):
