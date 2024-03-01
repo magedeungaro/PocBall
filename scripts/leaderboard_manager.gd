@@ -1,8 +1,6 @@
 extends Node
+@onready var api_key = %ApiKey
 
-# Use this game API key if you want to test with a functioning leaderboard
-# "987dbd0b9e5eb3749072acc47a210996eea9feb0"
-var game_API_key = "dev_6375766b457649b28eb20a08f39330cb"
 var development_mode = true
 var leaderboard_key = "leaderboardKey"
 var session_token = ""
@@ -19,23 +17,23 @@ var get_name_http = HTTPRequest.new()
 func _ready():
 	_authentication_request()
 
-func _process(_delta):
-	if(Input.is_action_just_pressed("ui_up")):
-		score += 1
-		print("CurrentScore:"+str(score))
-	
-	if(Input.is_action_just_pressed("ui_down")):
-		score -= 1
-		print("CurrentScore:"+str(score))
-	
-	# Upload score when pressing enter
-	if(Input.is_action_just_pressed("ui_accept")):
-		_get_player_name()
-		_upload_score(score)
-		_get_leaderboards()
-	# Get score when pressing spacebar
-	if(Input.is_action_just_pressed("ui_select")):
-		_change_player_name()
+#func _process(_delta):
+	#if(Input.is_action_just_pressed("ui_up")):
+		#score += 1
+		#print("CurrentScore:"+str(score))
+	#
+	#if(Input.is_action_just_pressed("ui_down")):
+		#score -= 1
+		#print("CurrentScore:"+str(score))
+	#
+	## Upload score when pressing enter
+	#if(Input.is_action_just_pressed("ui_accept")):
+		#_get_player_name()
+		#_upload_score(score)
+		#_get_leaderboards()
+	## Get score when pressing spacebar
+	#if(Input.is_action_just_pressed("ui_select")):
+		#_change_player_name()
 
 
 func _authentication_request():
@@ -55,11 +53,11 @@ func _authentication_request():
 		player_session_exists = true
 		
 	## Convert data to json string:
-	var data = { "game_key": game_API_key, "game_version": "0.0.0.1", "development_mode": true }
+	var data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "game_version": "0.0.0.1", "development_mode": true }
 	
 	# If a player session already exists, send with the player identifier
 	if(player_session_exists == true):
-		data = { "game_key": game_API_key, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": true }
+		data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": true }
 	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
