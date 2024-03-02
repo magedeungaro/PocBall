@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://02yxko47xwyi"]
+[gd_scene load_steps=14 format=3 uid="uid://02yxko47xwyi"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_synop"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_ysk76"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://carx34g4rvmnt" path="res://scenes/leaderboard_manager.tscn" id="6_0gqwm"]
 [ext_resource type="PackedScene" uid="uid://cobkps43hxrcj" path="res://scenes/ball_character.tscn" id="7_rstc6"]
 [ext_resource type="PackedScene" uid="uid://boabsegwyjy2h" path="res://scenes/star_finish_point.tscn" id="8_kw0f8"]
+[ext_resource type="PackedScene" uid="uid://bwnj3iiowexyq" path="res://scenes/main_menu.tscn" id="9_3hy71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_y48lf")
@@ -2218,5 +2219,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 drag_horizontal_offset = 1.0
 
-[node name="Area2D" parent="." instance=ExtResource("8_kw0f8")]
-position = Vector2(3516, 601)
+[node name="StarFinishingPoint" parent="." instance=ExtResource("8_kw0f8")]
+position = Vector2(1919, 467)
+target_level = ExtResource("9_3hy71")

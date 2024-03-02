@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://boabsegwyjy2h"]
+[gd_scene load_steps=10 format=3 uid="uid://boabsegwyjy2h"]
 
+[ext_resource type="Script" path="res://scenes/star_finish_point.gd" id="1_ip5wm"]
 [ext_resource type="Texture2D" uid="uid://d26yk3hfmaprf" path="res://assets/objects/star_finish_point.png" id="1_od4m4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgj5v"]
@@ -49,6 +50,7 @@ animations = [{
 size = Vector2(31.5, 31)
 
 [node name="StarFinishingPoint" type="Area2D"]
+script = ExtResource("1_ip5wm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -58,3 +60,5 @@ frame_progress = 0.060087
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3t1ui")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
