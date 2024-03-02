@@ -1,8 +1,7 @@
 extends Node
 @onready var api_key = %ApiKey
 
-var development_mode = api_key.DEVELOPMENT_MODE
-var leaderboard_key = "leaderboardKey"
+var leaderboard_key = "level1"
 var session_token = ""
 var score = 0
 
@@ -53,11 +52,11 @@ func _authentication_request():
 		player_session_exists = true
 		
 	## Convert data to json string:
-	var data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "game_version": "0.0.0.1", "development_mode": development_mode }
+	var data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "game_version": "0.0.0.1", "development_mode": api_key.DEVELOPMENT_MODE }
 	
 	# If a player session already exists, send with the player identifier
 	if(player_session_exists == true):
-		data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": development_mode }
+		data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": api_key.DEVELOPMENT_MODE }
 	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]

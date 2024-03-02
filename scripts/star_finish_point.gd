@@ -5,3 +5,6 @@ extends Area2D
 func _on_body_entered(body):
 	if (body.name == "BallCharacter"):
 		get_tree().change_scene_to_packed(target_level)
+
+func _on_process(_delta):
+	print(target_level)
