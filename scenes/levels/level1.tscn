@@ -2236,5 +2236,6 @@ anchor_mode = 0
 zoom = Vector2(0.705, 0.705)
 
 [node name="CountUpTimer" parent="." instance=ExtResource("10_eeh8v")]
+unique_name_in_owner = true
 
 [node name="InfoPanel" parent="." instance=ExtResource("11_87c13")]

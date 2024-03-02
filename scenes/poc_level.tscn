@@ -2226,5 +2226,6 @@ position = Vector2(1919, 467)
 target_level = ExtResource("9_3hy71")
 
 [node name="CountUpTimer" parent="." instance=ExtResource("10_rbybe")]
+unique_name_in_owner = true
 
 [node name="InfoPanel" parent="." instance=ExtResource("11_e8k2r")]
