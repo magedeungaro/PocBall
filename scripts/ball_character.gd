@@ -6,9 +6,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const BOOST_THRESHOLD = {
 	down = 25,
-	up = 24
+	up = 26
 }
 const THRESHOLD_OFFSET = 6
+const ANIMATION_THRESHOLD = 14
 const CALCULATION_THRESHOLD = BOOST_THRESHOLD.up + THRESHOLD_OFFSET
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -43,6 +44,10 @@ func _is_boost_window(distance):
 func _is_calculation_window(distance):
 	if not distance: return false
 	return distance >= BOOST_THRESHOLD.up and distance <= CALCULATION_THRESHOLD and is_going_up()
+	
+func _is_normal_animation_window(distance):
+	if not distance: return false
+	return distance >= ANIMATION_THRESHOLD and is_going_up()
 		
 func _change_velocity(modifier = 1):
 	var jump_velocity = JUMP_VELOCITY * modifier
@@ -52,7 +57,7 @@ func _change_velocity(modifier = 1):
 	
 func _get_boost_modifier():
 	if additional_boost:
-		return 2.2
+		return 3
 	elif boost_jump:
 		return 1.5
 	
@@ -61,11 +66,13 @@ func _handle_jump():
 	if is_on_floor(): 
 		_change_velocity()
 		animated_sprite_2d.animation = "jumping"
-
-	if _is_boost_window(distance):
-		if Input.is_action_just_pressed("boost_jump"): boost_jump = true
-	elif is_going_up(): animated_sprite_2d.animation = "idle"
-			
+	
+	if _is_normal_animation_window(distance):
+		if animated_sprite_2d.animation == "idle": pass
+		animated_sprite_2d.animation = "idle"
+		
+	if _is_boost_window(distance) and Input.is_action_just_pressed("boost_jump"):
+		boost_jump = true
 
 	if _is_calculation_window(distance):
 		if boost_jump:
