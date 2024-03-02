@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7qcjp7ypcvtq"]
+[gd_scene load_steps=3 format=3 uid="uid://b7qcjp7ypcvtq"]
 
 [ext_resource type="Script" path="res://scripts/count_up_timer.gd" id="1_tsjkx"]
+[ext_resource type="Script" path="res://scripts/time_utils.gd" id="2_wl78m"]
 
 [node name="CountUpTimer" type="Node"]
 script = ExtResource("1_tsjkx")
@@ -23,3 +24,7 @@ text = "000  00  000"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="TimeUtils" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_wl78m")

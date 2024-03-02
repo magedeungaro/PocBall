@@ -1,7 +1,7 @@
 extends Node
 @onready var api_key = %ApiKey
 
-var development_mode = true
+var development_mode = api_key.DEVELOPMENT_MODE
 var leaderboard_key = "leaderboardKey"
 var session_token = ""
 var score = 0
@@ -28,7 +28,7 @@ func _ready():
 	#
 	## Upload score when pressing enter
 	#if(Input.is_action_just_pressed("ui_accept")):
-		#_get_player_name()
+		#_get_player_name()"button_pressed"
 		#_upload_score(score)
 		#_get_leaderboards()
 	## Get score when pressing spacebar
@@ -53,11 +53,11 @@ func _authentication_request():
 		player_session_exists = true
 		
 	## Convert data to json string:
-	var data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "game_version": "0.0.0.1", "development_mode": true }
+	var data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "game_version": "0.0.0.1", "development_mode": development_mode }
 	
 	# If a player session already exists, send with the player identifier
 	if(player_session_exists == true):
-		data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": true }
+		data = { "game_key": api_key.LOOT_LOCKER_API_KEY, "player_identifier":player_identifier, "game_version": "0.0.0.1", "development_mode": development_mode }
 	
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
