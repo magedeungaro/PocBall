@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7qcjp7ypcvtq"]
+
+[ext_resource type="Script" path="res://scripts/count_up_timer.gd" id="1_tsjkx"]
+
+[node name="CountUpTimer" type="Node"]
+script = ExtResource("1_tsjkx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ElapsedTimeLabel" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 8.0
+offset_right = -22.0
+offset_bottom = 39.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "000  00  000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

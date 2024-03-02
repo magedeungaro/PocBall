@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://boabsegwyjy2h"]
 
-[ext_resource type="Script" path="res://scenes/star_finish_point.gd" id="1_ip5wm"]
+[ext_resource type="Script" path="res://scripts/star_finish_point.gd" id="1_ip5wm"]
 [ext_resource type="Texture2D" uid="uid://d26yk3hfmaprf" path="res://assets/objects/star_finish_point.png" id="1_od4m4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgj5v"]

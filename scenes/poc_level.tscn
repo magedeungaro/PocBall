@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://02yxko47xwyi"]
+[gd_scene load_steps=16 format=3 uid="uid://02yxko47xwyi"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_synop"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_ysk76"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cobkps43hxrcj" path="res://scenes/ball_character.tscn" id="7_rstc6"]
 [ext_resource type="PackedScene" uid="uid://boabsegwyjy2h" path="res://scenes/star_finish_point.tscn" id="8_kw0f8"]
 [ext_resource type="PackedScene" uid="uid://bwnj3iiowexyq" path="res://scenes/main_menu.tscn" id="9_3hy71"]
+[ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="10_rbybe"]
+[ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="11_e8k2r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_y48lf")
@@ -2222,3 +2224,7 @@ drag_horizontal_offset = 1.0
 [node name="StarFinishingPoint" parent="." instance=ExtResource("8_kw0f8")]
 position = Vector2(1919, 467)
 target_level = ExtResource("9_3hy71")
+
+[node name="CountUpTimer" parent="." instance=ExtResource("10_rbybe")]
+
+[node name="InfoPanel" parent="." instance=ExtResource("11_e8k2r")]
