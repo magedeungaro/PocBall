@@ -2190,7 +2190,7 @@ sources/0 = SubResource("TileSetAtlasSource_4jwf8")
 sources/1 = SubResource("TileSetAtlasSource_ekkng")
 sources/2 = SubResource("TileSetAtlasSource_1u082")
 
-[node name="Level 1" type="Node"]
+[node name="Level1" type="Node"]
 metadata/_edit_vertical_guides_ = [1021.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
