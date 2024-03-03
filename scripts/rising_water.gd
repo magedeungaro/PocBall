@@ -10,6 +10,8 @@ var start_position = water_origin
 var end_position = Vector2(water_origin.x, water_origin.y - height_to_rise)
 var delay_water_for = 0
 
+func delay_water(delay):
+	delay_water_for += delay
 
 func _on_body_entered(body):
 	if (body.name == "BallCharacter"):
