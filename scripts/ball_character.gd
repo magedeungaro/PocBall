@@ -21,11 +21,35 @@ var additional_boost = false
 func _distance_from_floor():
 	const OFFSET = 12.15
 	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x, 1000000))
-	var result = space_state.intersect_ray(query)
 
-	if not (result.is_empty()):
-		return result.position.y - position.y - OFFSET
+	var query_center_ray = PhysicsRayQueryParameters2D.create(position, Vector2(position.x, 1000000))
+	var query_left_ray = PhysicsRayQueryParameters2D.create(Vector2(position.x - 12, position.y), Vector2(position.x - 12, 1000000))
+	var query_right_ray = PhysicsRayQueryParameters2D.create(Vector2(position.x + 12, position.y), Vector2(position.x + 12, 1000000))
+
+	var result_center_ray = space_state.intersect_ray(query_center_ray)
+	var result_left_ray = space_state.intersect_ray(query_left_ray)
+	var result_right_ray = space_state.intersect_ray(query_right_ray)
+
+	var height_center_ray = null
+	var height_left_ray = null
+	var height_right_ray = null
+
+	if not (result_center_ray.is_empty()):
+		height_center_ray = result_center_ray.position.y - position.y - OFFSET
+
+	if not (result_left_ray.is_empty()):
+		height_left_ray = result_left_ray.position.y - position.y - OFFSET
+
+	if not (result_right_ray.is_empty()):
+		height_right_ray = result_right_ray.position.y - position.y - OFFSET
+
+
+	var results = [height_center_ray, height_left_ray, height_right_ray]
+
+	var actual_height = results.min()
+	
+	if actual_height:
+		return actual_height
 		
 func is_going_down():
 	return velocity.y > 0
