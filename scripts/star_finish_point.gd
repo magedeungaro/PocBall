@@ -16,7 +16,7 @@ func _change_scene():
 	get_tree().change_scene_to_packed(target_level)
 	
 func _send_player_info():
-	var score = count_up_timer.time_elapsed
+	var score = count_up_timer.time_elapsed * 1000
 	player_manager.scores[leaderboard_key] = score
 	var data = { score = score,
 			 	 leaderboard_key = leaderboard_key }

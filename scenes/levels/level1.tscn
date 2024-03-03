@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bwnj3iiowexyq" path="res://scenes/main_menu.tscn" id="9_ophpw"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="10_eeh8v"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="11_87c13"]
+[ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_e6045"]
 [ext_resource type="PackedScene" uid="uid://c3ms88fgd3t7f" path="res://scenes/rising_water.tscn" id="12_vfolw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
@@ -33,14 +34,17 @@ texture = ExtResource("3_msrol")
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0/physics_layer_0/polygon_0/one_way = true
 7:0/0 = 0
 7:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:0/0/physics_layer_0/angular_velocity = 0.0
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0/physics_layer_0/polygon_0/one_way = true
 8:0/0 = 0
 8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:0/0/physics_layer_0/angular_velocity = 0.0
 8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0/physics_layer_0/polygon_0/one_way = true
 9:0/0 = 0
 9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2240,4 +2244,15 @@ unique_name_in_owner = true
 
 [node name="RisingWater" parent="." instance=ExtResource("12_vfolw")]
 modulate = Color(1, 1, 1, 0.278431)
-position = Vector2(1, 1137)
+position = Vector2(802, 1595)
+
+[node name="FaucetCollectables" type="Node" parent="."]
+
+[node name="FaucetCollectable" parent="FaucetCollectables" instance=ExtResource("12_e6045")]
+position = Vector2(584, 701)
+
+[node name="FaucetCollectable2" parent="FaucetCollectables" instance=ExtResource("12_e6045")]
+position = Vector2(894, 616)
+
+[node name="FaucetCollectable3" parent="FaucetCollectables" instance=ExtResource("12_e6045")]
+position = Vector2(1192, 478)
