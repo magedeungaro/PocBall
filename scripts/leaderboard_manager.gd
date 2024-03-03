@@ -5,6 +5,8 @@ extends Node
 var base_url = "https://api.lootlocker.io/"
 var session_token = null
 var player_name = null
+var last_ranking_data = null
+var last_level_name = null
 
 # HTTP Request node can only handle one call per node
 var auth_http = HTTPRequest.new()
@@ -16,8 +18,10 @@ var get_name_http = HTTPRequest.new()
 
 func send_player_info(info_dict):
 	var leaderboard_key = info_dict.leaderboard_key
+	last_level_name = leaderboard_key.replace("\\b(\\d)", " \\0")
 	var score = info_dict.score
 	_upload_score(score, leaderboard_key)
+	get_leaderboards(leaderboard_key)
 
 
 func _ready():
@@ -48,16 +52,16 @@ func _authentication_request():
 	auth_http.request_completed.connect(_on_authentication_request_completed)
 	auth_http.request(base_url+endpoint, headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
-func _get_leaderboards(leaderboard_key):
+func get_leaderboards(leaderboard_key):
 	print("Getting leaderboards")
-	var url = "game/leaderboards/"+leaderboard_key+"/list?count=10"
+	var endpoint = "game/leaderboards/"+leaderboard_key+"/list?count=10"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	
 	leaderboard_http = HTTPRequest.new()
 	add_child(leaderboard_http)
 
 	leaderboard_http.request_completed.connect(_on_leaderboard_request_completed)
-	leaderboard_http.request(url, headers, HTTPClient.METHOD_GET, "")
+	leaderboard_http.request(base_url+endpoint, headers, HTTPClient.METHOD_GET, "")
 
 func _upload_score(score, leaderboard_key):
 	var endpoint = "game/leaderboards/"+leaderboard_key+"/submit"
@@ -102,7 +106,8 @@ func _on_authentication_request_completed(_result, response_code, _headers, body
 	session_token = json.get_data().session_token
 	auth_http.queue_free()
 
-func _on_leaderboard_request_completed(_result, _response_code, _headers, body):
+func _on_leaderboard_request_completed(_result, response_code, _headers, body):
+	if response_code != 200: return
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
@@ -111,9 +116,8 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body):
 		leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
 		leaderboardFormatted += str(json.get_data().items[n].player.id)+str(" - ")
 		leaderboardFormatted += str(json.get_data().items[n].score)+str("\n")
-	print(leaderboardFormatted)
-	
 	leaderboard_http.queue_free()
+	last_ranking_data = leaderboardFormatted
 
 func _on_player_get_name_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
