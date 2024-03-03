@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var leaderboard_manager = LeaderboardManager
+
 const height_to_rise = 952
 const water_origin = Vector2(827, 1576)
 @export var water_rising_speed : float
@@ -15,8 +17,12 @@ func delay_water(delay):
 
 func _on_body_entered(body):
 	if (body.name == "BallCharacter"):
-		print("player lost")
-
+		var current_scene = get_tree().get_current_scene().get_name()
+		var leaderboard_key = current_scene.to_lower()
+		leaderboard_manager.set_leaderboard_key(leaderboard_key)
+		leaderboard_manager.set_show_continue_button(false)
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+		
 func _physics_process(delta):
 	
 	if delay_water_for > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3ms88fgd3t7f"]
+[gd_scene load_steps=5 format=3 uid="uid://8rax1mp3u2dx"]
 
 [ext_resource type="Script" path="res://scripts/rising_water.gd" id="1_qpmv4"]
 [ext_resource type="Texture2D" uid="uid://ccfl250sq6ula" path="res://assets/backgrounds/Blue.png" id="2_vj1b0"]

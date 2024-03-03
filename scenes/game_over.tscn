@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=3 uid="uid://c0dpwi2xglxb8"]
+
+[ext_resource type="Texture2D" uid="uid://b8rsi6dmy28qx" path="res://assets/objects/ball_shadow.png" id="1_a0pgg"]
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_euqaj"]
+[ext_resource type="Texture2D" uid="uid://dbfuolmwm5i1" path="res://assets/objects/deflated_ball.png" id="1_ubgxn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn7h3"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ff2h"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q413m"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ju64"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cev0c"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_353fd"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yilbp"]
+atlas = ExtResource("1_ubgxn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_odo56"]
+animations = [{
+"frames": [{
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_sn7h3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ff2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q413m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ju64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cev0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_353fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yilbp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="GameOver" type="Node"]
+script = ExtResource("1_euqaj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0196078, 0.00784314, 0.0980392, 1)
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.0
+offset_top = 104.0
+offset_right = 164.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeflatedBall" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DeflatedBall"]
+texture_filter = 1
+position = Vector2(576, 486)
+texture = ExtResource("1_a0pgg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DeflatedBall"]
+texture_filter = 1
+position = Vector2(576, 480)
+sprite_frames = SubResource("SpriteFrames_odo56")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="TryAgainButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -67.0
+offset_right = 64.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Try again"
+
+[node name="MenuButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 37.0
+offset_right = 65.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit to menu"
+
+[node name="LeaderboardButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -15.0
+offset_right = 64.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leaderboard
+"
+
+[connection signal="pressed" from="TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]

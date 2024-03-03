@@ -23,5 +23,6 @@ func _on_body_entered(body):
 	if (body.name == "BallCharacter"):
 		_set_leaderboard_key()
 		_send_player_info()
+		leaderboard_manager.set_show_continue_button(true)
 		get_tree().change_scene_to_packed(target_level)
 		

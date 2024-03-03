@@ -9,6 +9,7 @@ var player_name = null
 var last_ranking_data = null
 var last_level_name = null
 var leaderboard_key = null
+var show_continue_button : bool = false
 
 # HTTP Request node can only handle one call per node
 var auth_http = HTTPRequest.new()
@@ -17,14 +18,22 @@ var submit_score_http = HTTPRequest.new()
 var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
 
+func set_leaderboard_key(key):
+	leaderboard_key = key
+	_set_level_name()
+
+func set_show_continue_button(value : bool):
+	show_continue_button = value
 
 func send_player_info(info_dict):
 	last_ranking_data = null
 	leaderboard_key = info_dict.leaderboard_key
-	last_level_name = leaderboard_key.replace("\\b(\\d)", " \\0")
+	_set_level_name()
 	var score = info_dict.score
 	_upload_score(score)
-
+	
+func _set_level_name():
+	last_level_name = leaderboard_key.replace("\\b(\\d)", " \\0")
 
 func _ready():
 	_authentication_request()

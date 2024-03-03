@@ -3,9 +3,9 @@ extends Node
 @onready var leaderboard_manager = LeaderboardManager
 
 var player_info = {
-  name = null,
-  rankings = {},
-  scores = {}
+	name = null,
+	rankings = {},
+	scores = {}
 }
 
 func set_player_name(player_name):

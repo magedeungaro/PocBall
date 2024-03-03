@@ -5,35 +5,46 @@ extends Node
 @onready var level_name = $LevelName
 @onready var ranking = $Panel/Ranking
 @onready var player_info = $AsidePanel/PlayerInfo
+@onready var continue_button = $ContinueButton
 @onready var leaderboard = leaderboard_manager.leaderboard_key
 const DEFAULT_TEXT = "Loading..."
+const DEFAULT_PLAYER_INFO = ""
 
 func _ready():
+	_handle_continue_button()
 	ranking.text = DEFAULT_TEXT
-	var last_data = leaderboard_manager.last_ranking_data
-	if last_data: ranking.text = last_data
 	level_name.text = leaderboard_manager.last_level_name
-	player_info.text = _format_player_info()
+	_handle_display_player_info()
 
 func _process(_delta):
-	if ranking.text == DEFAULT_TEXT and leaderboard_manager.last_ranking_data:
-		ranking.text = leaderboard_manager.last_ranking_data
-		player_info.text += _format_player_rank_info()
-		
-
+	_handle_display_leaderboard_info()
 
 func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
+func _handle_display_leaderboard_info():
+	if ranking.text == DEFAULT_TEXT and leaderboard_manager.last_ranking_data:
+		ranking.text = leaderboard_manager.last_ranking_data
+		if _format_player_rank_info(): player_info.text += _format_player_rank_info()
+
+func _handle_display_player_info():
+	var previous_player_info = _format_player_info()
+	if previous_player_info:
+		player_info.text = previous_player_info
+	else: player_info.text = DEFAULT_PLAYER_INFO
+
 func _format_player_info():
-	var headline = "Current score: \n"
-	var current_score = str(player_manager.player_info.scores[leaderboard]) + "\n\n"
-	
-	return headline + current_score
+	if leaderboard in player_manager.player_info.scores:
+		var headline = "Current score: \n"
+		var current_score = str(player_manager.player_info.scores[leaderboard]) + "\n\n"
+		return headline + current_score
 
 func _format_player_rank_info():
-	if player_manager.player_info.rankings.size() == 0: return
-
-	var rank_headline = "Your rank: \n"
-	var current_rank = player_manager.player_info.rankings[leaderboard]
-	return rank_headline + current_rank
+	if leaderboard in player_manager.player_info.rankings:
+		var rank_headline = "Your rank: \n"
+		var current_rank = player_manager.player_info.rankings[leaderboard]
+		return rank_headline + current_rank
+		
+func _handle_continue_button():
+	if not leaderboard_manager.show_continue_button:
+		continue_button.queue_free()
