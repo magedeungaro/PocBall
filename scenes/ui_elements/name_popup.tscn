@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcpnxo3xorxty"]
+
+[ext_resource type="Texture2D" uid="uid://055ud34fwrwl" path="res://assets/backgrounds/Purple.png" id="1_tmiuk"]
+[ext_resource type="Script" path="res://scripts/name_popup.gd" id="1_x5p8n"]
+[ext_resource type="Script" path="res://scripts/name_input.gd" id="3_u5kx2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4xaw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl837"]
+bg_color = Color(0, 0.529412, 0.458824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktef4"]
+bg_color = Color(0.0823529, 0.623529, 0.552941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ieut"]
+bg_color = Color(0, 0.380392, 0.32549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5f1j"]
+bg_color = Color(0.564706, 0, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjf16"]
+bg_color = Color(0.807843, 0, 0.470588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cedx"]
+bg_color = Color(0.411765, 0, 0.227451, 1)
+
+[node name="NamePopup" type="Node"]
+script = ExtResource("1_x5p8n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tmiuk")
+stretch_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -64.0
+offset_right = 198.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r4xaw")
+
+[node name="NameInput" type="TextEdit" parent="CanvasLayer/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.5
+offset_top = -16.0
+offset_right = 158.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Enter name..."
+context_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink = true
+script = ExtResource("3_u5kx2")
+
+[node name="AcceptButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = 28.0
+offset_right = -34.0
+offset_bottom = 59.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dl837")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ktef4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ieut")
+text = "Accept"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 28.0
+offset_right = 134.0
+offset_bottom = 59.0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5f1j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yjf16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3cedx")
+text = "Cancel
+"
+
+[connection signal="pressed" from="CanvasLayer/Panel/AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="." method="_on_close_button_pressed"]

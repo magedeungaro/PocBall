@@ -1,6 +1,5 @@
 extends Node
-
-
+@onready var name_input = preload("res://scenes/ui_elements/name_popup.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,3 +19,7 @@ func _on_level_selection_button_pressed():
 
 func _on_leaderboards_button_pressed():
 	pass # Replace with function body.
+
+
+func _on_name_button_pressed():
+	add_child(name_input.instantiate())

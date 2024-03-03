@@ -24,6 +24,7 @@ GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

@@ -91,7 +91,7 @@ func _upload_score(score):
 	submit_score_http.request_completed.connect(_on_upload_score_request_completed)
 	submit_score_http.request(base_url+endpoint, headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
-func _change_player_name(new_player_name):
+func change_player_name(new_player_name):
 	var data = { "name": str(new_player_name) }
 	var endpoint =  "game/player/name"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
@@ -161,5 +161,9 @@ func _on_upload_score_request_completed(_result, response_code, _headers, body):
 func _on_player_set_name_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
-	print(json.get_data())
+	var name_data = json.get_data()
+	if not name_data or not name_data.name: return
+	
+	print(name_data)
+	player_manager.set_player_name(name_data.name)
 	set_name_http.queue_free()
