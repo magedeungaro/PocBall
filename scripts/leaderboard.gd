@@ -14,3 +14,7 @@ func _ready():
 func _process(_delta):
 	if ranking.text == DEFAULT_TEXT and leaderboard_manager.last_ranking_data:
 		ranking.text = leaderboard_manager.last_ranking_data
+
+
+func _on_menu_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
