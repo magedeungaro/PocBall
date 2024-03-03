@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpoh4idkfts67"]
+[gd_scene load_steps=17 format=3 uid="uid://bpoh4idkfts67"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_gnvtw"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_0o8nc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bwnj3iiowexyq" path="res://scenes/main_menu.tscn" id="9_ophpw"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="10_eeh8v"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="11_87c13"]
+[ext_resource type="PackedScene" uid="uid://c3ms88fgd3t7f" path="res://scenes/rising_water.tscn" id="12_vfolw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_msrol")
@@ -2238,3 +2239,7 @@ zoom = Vector2(0.705, 0.705)
 [node name="CountUpTimer" parent="." instance=ExtResource("10_eeh8v")]
 
 [node name="InfoPanel" parent="." instance=ExtResource("11_87c13")]
+
+[node name="RisingWater" parent="." instance=ExtResource("12_vfolw")]
+modulate = Color(1, 1, 1, 0.278431)
+position = Vector2(1, 1137)
