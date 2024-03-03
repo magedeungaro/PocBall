@@ -2266,6 +2266,8 @@ unique_name_in_owner = true
 [node name="RisingWater" parent="." instance=ExtResource("11_lj5sc")]
 modulate = Color(1, 1, 1, 0.278431)
 position = Vector2(802, 1595)
+water_rising_speed = 0.01
+water_retreat_speed = 0.05
 
 [node name="FaucetCollectables" type="Node" parent="."]
 

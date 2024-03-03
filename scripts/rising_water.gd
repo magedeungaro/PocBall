@@ -2,8 +2,8 @@ extends Area2D
 
 const height_to_rise = 952
 const water_origin = Vector2(827, 1576)
-const water_retreat_speed = 0.05
-const water_rising_speed = 0.01
+@export var water_rising_speed : float
+@export var water_retreat_speed : float
 
 var distance_traveled_normalized = 0.0
 var start_position = water_origin

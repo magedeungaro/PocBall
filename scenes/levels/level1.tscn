@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://4c8avmtkv4ew" path="res://scenes/leaderboard.tscn" id="8_pmq67"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="10_eeh8v"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="11_87c13"]
-[ext_resource type="PackedScene" path="res://scenes/faucet_collectable.tscn" id="12_e6045"]
-[ext_resource type="PackedScene" path="res://scenes/rising_water.tscn" id="12_vfolw"]
+[ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_e6045"]
+[ext_resource type="PackedScene" uid="uid://c3ms88fgd3t7f" path="res://scenes/rising_water.tscn" id="12_vfolw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_msrol")
@@ -2245,6 +2245,8 @@ unique_name_in_owner = true
 [node name="RisingWater" parent="." instance=ExtResource("12_vfolw")]
 modulate = Color(1, 1, 1, 0.278431)
 position = Vector2(802, 1595)
+water_rising_speed = 0.01
+water_retreat_speed = 0.05
 
 [node name="FaucetCollectables" type="Node" parent="."]
 
