@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://4c8avmtkv4ew" path="res://scenes/leaderboard.tscn" id="8_kphvv"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="9_ebkld"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="10_nx2b8"]
-[ext_resource type="PackedScene" uid="uid://c3ms88fgd3t7f" path="res://scenes/rising_water.tscn" id="11_t1nip"]
+[ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="11_t1nip"]
 [ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_f4ka2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
