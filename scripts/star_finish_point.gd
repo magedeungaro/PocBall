@@ -14,9 +14,9 @@ func _set_leaderboard_key():
 	
 func _send_player_info():
 	var score = count_up_timer.time_elapsed * 1000
-	player_manager.scores[leaderboard_key] = score
-	var data = { score = score,
-			 	 leaderboard_key = leaderboard_key }
+	player_manager.update_current_score(leaderboard_key, score)
+
+	var data = { score = score, leaderboard_key = leaderboard_key }
 	leaderboard_manager.send_player_info(data)
 
 func _on_body_entered(body):

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var api_key = ApiKey
+@onready var player_manager = PlayerManager
 
 var base_url = "https://api.lootlocker.io/"
 var session_token = null
@@ -112,6 +113,7 @@ func _on_authentication_request_completed(_result, response_code, _headers, body
 	file.close()
 	session_token = json.get_data().session_token
 	auth_http.queue_free()
+	_get_player_name()
 
 func _on_leaderboard_request_completed(_result, response_code, _headers, body):
 	if response_code != 200: return
@@ -124,8 +126,9 @@ func _on_leaderboard_request_completed(_result, response_code, _headers, body):
 
 	var leaderboardFormatted = ""
 	for n in items.size():
+		print(items[n])
 		leaderboardFormatted += str(items[n].rank)+str(". ")
-		leaderboardFormatted += str(items[n].player.id)+str(" - ")
+		leaderboardFormatted += items[n].player.name+str(" - ")
 		leaderboardFormatted += str(items[n].score)+str("\n")
 	leaderboard_http.queue_free()
 	last_ranking_data = leaderboardFormatted
@@ -135,11 +138,13 @@ func _on_player_get_name_request_completed(_result, _response_code, _headers, bo
 	json.parse(body.get_string_from_utf8())
 	print(json.get_data())
 	print(json.get_data().name)
+	player_manager.set_player_name(json.get_data().name)
 
 func _on_upload_score_request_completed(_result, response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	print(json.get_data())
+	player_manager.update_current_ranking(leaderboard_key, json.get_data())
 	submit_score_http.queue_free()
 	if response_code == 200:
 		get_leaderboards(leaderboard_key)
