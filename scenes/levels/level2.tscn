@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbyp3iewyy581"]
+[gd_scene load_steps=17 format=3 uid="uid://dsinq1nwdtsle"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_00qi7"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_pe42v"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://4c8avmtkv4ew" path="res://scenes/leaderboard.tscn" id="8_l8y64"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="9_lr80b"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="10_52wlg"]
-[ext_resource type="PackedScene" uid="uid://c3ms88fgd3t7f" path="res://scenes/rising_water.tscn" id="11_lj5sc"]
-[ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_ymc5r"]
+[ext_resource type="PackedScene" path="res://scenes/rising_water.tscn" id="11_lj5sc"]
+[ext_resource type="PackedScene" path="res://scenes/faucet_collectable.tscn" id="12_ymc5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_olioj")
@@ -2215,7 +2215,7 @@ sources/0 = SubResource("TileSetAtlasSource_4jwf8")
 sources/1 = SubResource("TileSetAtlasSource_ekkng")
 sources/2 = SubResource("TileSetAtlasSource_1u082")
 
-[node name="Level1" type="Node"]
+[node name="Level2" type="Node"]
 metadata/_edit_vertical_guides_ = [1021.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
