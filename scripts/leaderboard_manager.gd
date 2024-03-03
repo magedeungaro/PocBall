@@ -1,6 +1,7 @@
 extends Node
 
 @onready var api_key = ApiKey
+
 var base_url = "https://api.lootlocker.io/"
 var session_token = null
 var player_name = null

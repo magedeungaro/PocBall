@@ -1,8 +1,11 @@
 extends Area2D
 
-var leaderboard_manager = LeaderboardManager
-@onready var count_up_timer = %CountUpTimer
 @export var target_level : PackedScene
+
+@onready var leaderboard_manager = LeaderboardManager
+@onready var player_manager = PlayerManager
+@onready var count_up_timer = %CountUpTimer
+
 var leaderboard_key = null
 
 func _set_leaderboard_key():
@@ -13,7 +16,9 @@ func _change_scene():
 	get_tree().change_scene_to_packed(target_level)
 	
 func _send_player_info():
-	var data = { score=count_up_timer.time_elapsed,
+	var score = count_up_timer.time_elapsed
+	player_manager.scores[leaderboard_key] = score
+	var data = { score = score,
 			 	 leaderboard_key = leaderboard_key }
 	leaderboard_manager.send_player_info(data)
 

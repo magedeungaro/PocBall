@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LeaderboardManager="*res://scripts/leaderboard_manager.gd"
 ApiKey="*res://scripts/api_key.gd"
+PlayerManager="*res://scripts/player_manager.gd"
 
 [display]
 
