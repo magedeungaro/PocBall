@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
+@onready var audio_stream_player_2d = %AudioStreamPlayer2D
+
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -64,6 +66,7 @@ func _get_boost_modifier():
 func _handle_jump():
 	var distance = _distance_from_floor()
 	if is_on_floor(): 
+		audio_stream_player_2d.play()
 		_change_velocity()
 		animated_sprite_2d.animation = "jumping"
 	
