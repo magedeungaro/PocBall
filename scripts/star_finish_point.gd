@@ -1,5 +1,6 @@
 extends Area2D
 
+var leaderboard_manager = LeaderboardManager
 @onready var count_up_timer = %CountUpTimer
 @export var target_level : PackedScene
 var leaderboard_key = null
@@ -14,7 +15,7 @@ func _change_scene():
 func _send_player_info():
 	var data = { score=count_up_timer.time_elapsed,
 			 	 leaderboard_key = leaderboard_key }
-	print(data)
+	leaderboard_manager.send_player_info(data)
 
 func _on_body_entered(body):
 	if (body.name == "BallCharacter"):

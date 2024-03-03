@@ -15,6 +15,11 @@ run/main_scene="res://scenes/levels/level1.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LeaderboardManager="*res://scripts/leaderboard_manager.gd"
+ApiKey="*res://scripts/api_key.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
