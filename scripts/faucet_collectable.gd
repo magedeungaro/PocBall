@@ -4,6 +4,6 @@ extends Area2D
 
 var water_delay_quantity = 1
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	rising_water.delay_water(water_delay_quantity)
 	queue_free()
