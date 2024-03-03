@@ -53,6 +53,7 @@ func _authentication_request():
 	auth_http.request(base_url+endpoint, headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
 func get_leaderboards(leaderboard_key):
+	last_ranking_data = null
 	print("Getting leaderboards")
 	var endpoint = "game/leaderboards/"+leaderboard_key+"/list?count=10"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
@@ -110,12 +111,16 @@ func _on_leaderboard_request_completed(_result, response_code, _headers, body):
 	if response_code != 200: return
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
-	
+	var items = json.get_data().items
+	if not items:
+		last_ranking_data = "No data"
+		return
+
 	var leaderboardFormatted = ""
-	for n in json.get_data().items.size():
-		leaderboardFormatted += str(json.get_data().items[n].rank)+str(". ")
-		leaderboardFormatted += str(json.get_data().items[n].player.id)+str(" - ")
-		leaderboardFormatted += str(json.get_data().items[n].score)+str("\n")
+	for n in items.size():
+		leaderboardFormatted += str(items[n].rank)+str(". ")
+		leaderboardFormatted += str(items[n].player.id)+str(" - ")
+		leaderboardFormatted += str(items[n].score)+str("\n")
 	leaderboard_http.queue_free()
 	last_ranking_data = leaderboardFormatted
 
