@@ -14,4 +14,11 @@ func _process(_delta):
 
 func get_next_level():
 	if not leaderboard_manager.last_level_name: return
-	var regex = RegEx.new("\\d+")
+	
+	var regex = RegEx.new()
+	regex.compile("\\d+")
+	var level = regex.search(leaderboard_manager.last_level_name)
+	if not level: return
+	
+	var next_level = level.get_string().to_int() + 1
+	return "level" + str(next_level)

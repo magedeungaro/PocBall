@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4c8avmtkv4ew"]
+[gd_scene load_steps=17 format=3 uid="uid://4c8avmtkv4ew"]
 
 [ext_resource type="Texture2D" uid="uid://b321mumbaexhn" path="res://assets/backgrounds/Yellow.png" id="1_qkbfs"]
 [ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_xuq3f"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d26yk3hfmaprf" path="res://assets/objects/star_finish_point.png" id="4_1qwbq"]
 [ext_resource type="Script" path="res://scripts/cloud.gd" id="4_24o71"]
 [ext_resource type="Script" path="res://scripts/cloud_2.gd" id="5_po1uc"]
+[ext_resource type="Script" path="res://scripts/next_level_button.gd" id="8_2o0sr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xoej"]
 resource_name = "default"
@@ -318,4 +319,17 @@ offset_bottom = 11.0
 grow_vertical = 2
 text = "Back to menu"
 
+[node name="NextLevelButton" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = 44.0
+offset_right = 168.0
+offset_bottom = 75.0
+grow_vertical = 2
+text = "Continue"
+script = ExtResource("8_2o0sr")
+
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="NextLevelButton" method="_on_pressed"]
