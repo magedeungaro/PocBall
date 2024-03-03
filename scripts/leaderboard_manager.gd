@@ -3,6 +3,7 @@ extends Node
 @onready var api_key = ApiKey
 var base_url = "https://api.lootlocker.io/"
 var session_token = null
+var player_name = null
 
 # HTTP Request node can only handle one call per node
 var auth_http = HTTPRequest.new()
@@ -68,8 +69,8 @@ func _upload_score(score, leaderboard_key):
 	submit_score_http.request_completed.connect(_on_upload_score_request_completed)
 	submit_score_http.request(base_url+endpoint, headers, HTTPClient.METHOD_POST, JSON.stringify(data))
 
-func _change_player_name(player_name):
-	var data = { "name": str(player_name) }
+func _change_player_name(new_player_name):
+	var data = { "name": str(new_player_name) }
 	var endpoint =  "game/player/name"
 	var headers = ["Content-Type: application/json", "x-session-token:"+session_token]
 	
