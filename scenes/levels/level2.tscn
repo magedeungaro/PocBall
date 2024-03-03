@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://4c8avmtkv4ew" path="res://scenes/leaderboard.tscn" id="8_l8y64"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="9_lr80b"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="10_52wlg"]
-[ext_resource type="PackedScene" uid="uid://c3ms88fgd3t7f" path="res://scenes/rising_water.tscn" id="11_lj5sc"]
+[ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="11_lj5sc"]
 [ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_ymc5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
@@ -2733,4 +2733,4 @@ water_retreat_speed = 0.05
 [node name="FaucetCollectables" type="Node" parent="."]
 
 [node name="FaucetCollectable" parent="FaucetCollectables" instance=ExtResource("12_ymc5r")]
-position = Vector2(1085, 396)
+position = Vector2(1119, 354)
