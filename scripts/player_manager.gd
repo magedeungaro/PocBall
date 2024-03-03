@@ -15,6 +15,6 @@ func update_current_score(leaderboard, score):
   player_info.scores[leaderboard] = int(score)
 
 func update_current_ranking(leaderboard, data):
-  var formatted_data = "1. "+player_info.name+str(" - ")+str(data.rank)+str(" - ")+str(data.score)
+  var formatted_data = str(data.rank)+". "+player_info.name+str(" - ")+str(data.score)
   player_info.rankings[leaderboard] = formatted_data
   print(player_info)
