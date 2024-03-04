@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcpnxo3xorxty"]
+[gd_scene load_steps=13 format=3 uid="uid://bcpnxo3xorxty"]
 
 [ext_resource type="Texture2D" uid="uid://055ud34fwrwl" path="res://assets/backgrounds/Purple.png" id="1_tmiuk"]
 [ext_resource type="Script" path="res://scripts/name_popup.gd" id="1_x5p8n"]
+[ext_resource type="StyleBox" uid="uid://brq6f87xtqswm" path="res://styles/input_light.tres" id="3_a7pqe"]
 [ext_resource type="Script" path="res://scripts/name_input.gd" id="3_u5kx2"]
 [ext_resource type="StyleBox" uid="uid://cff3qpa0one3w" path="res://styles/green_button_normal.tres" id="4_3po52"]
 [ext_resource type="StyleBox" uid="uid://egl10b2jevs2" path="res://styles/pink_button_normal.tres" id="4_ernw6"]
@@ -58,6 +59,10 @@ offset_right = 158.5
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.564706, 0, 0.321569, 1)
+theme_override_colors/font_placeholder_color = Color(0.439216, 0, 0.243137, 0.635294)
+theme_override_colors/caret_color = Color(0, 0.121569, 0.0588235, 1)
+theme_override_styles/normal = ExtResource("3_a7pqe")
 placeholder_text = "Enter name..."
 context_menu_enabled = false
 shortcut_keys_enabled = false
