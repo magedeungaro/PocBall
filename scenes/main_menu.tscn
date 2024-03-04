@@ -234,14 +234,14 @@ size_flags_horizontal = 4
 theme_override_styles/normal = ExtResource("7_cgwqb")
 theme_override_styles/hover = ExtResource("8_oa8u0")
 theme_override_styles/pressed = ExtResource("9_dkuje")
-text = "Level Selection"
+text = "Level selection"
 
 [node name="LeaderboardsButton" type="Button" parent="Buttons"]
 texture_filter = 1
 offset_left = 488.0
-offset_top = 456.0
+offset_top = 392.0
 offset_right = 656.0
-offset_bottom = 496.0
+offset_bottom = 432.0
 size_flags_horizontal = 4
 theme_override_styles/normal = ExtResource("7_cgwqb")
 theme_override_styles/hover = ExtResource("8_oa8u0")
@@ -251,13 +251,13 @@ text = "Leaderboards"
 [node name="NameButton" type="Button" parent="Buttons"]
 texture_filter = 1
 offset_left = 488.0
-offset_top = 392.0
+offset_top = 456.0
 offset_right = 656.0
-offset_bottom = 430.0
+offset_bottom = 494.0
 theme_override_styles/normal = ExtResource("7_cgwqb")
 theme_override_styles/hover = ExtResource("8_oa8u0")
 theme_override_styles/pressed = ExtResource("9_dkuje")
-text = "Change Name"
+text = "Change name"
 
 [node name="Star" parent="." instance=ExtResource("7_glrbr")]
 

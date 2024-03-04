@@ -1,8 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c0dpwi2xglxb8"]
+[gd_scene load_steps=15 format=3 uid="uid://c0dpwi2xglxb8"]
 
 [ext_resource type="Texture2D" uid="uid://b8rsi6dmy28qx" path="res://assets/objects/ball_shadow.png" id="1_a0pgg"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_euqaj"]
 [ext_resource type="Texture2D" uid="uid://dbfuolmwm5i1" path="res://assets/objects/deflated_ball.png" id="1_ubgxn"]
+[ext_resource type="StyleBox" uid="uid://3huc8c245srs" path="res://styles/blue_button_normal.tres" id="4_6kuom"]
+[ext_resource type="StyleBox" uid="uid://bekgskl5odne1" path="res://styles/blue_button_hover.tres" id="5_i2d1v"]
+[ext_resource type="StyleBox" uid="uid://d3hljsfcn1lhw" path="res://styles/blue_button_pressed.tres" id="6_7rykn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sn7h3"]
 atlas = ExtResource("1_ubgxn")
@@ -115,9 +118,13 @@ offset_right = 64.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = ExtResource("4_6kuom")
+theme_override_styles/hover = ExtResource("5_i2d1v")
+theme_override_styles/pressed = ExtResource("6_7rykn")
 text = "Try again"
 
 [node name="MenuButton" type="Button" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -129,6 +136,9 @@ offset_right = 65.0
 offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = ExtResource("4_6kuom")
+theme_override_styles/hover = ExtResource("5_i2d1v")
+theme_override_styles/pressed = ExtResource("6_7rykn")
 text = "Quit to menu"
 
 [node name="LeaderboardButton" type="Button" parent="."]
@@ -143,6 +153,9 @@ offset_right = 64.0
 offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = ExtResource("4_6kuom")
+theme_override_styles/hover = ExtResource("5_i2d1v")
+theme_override_styles/pressed = ExtResource("6_7rykn")
 text = "Leaderboard
 "
 
