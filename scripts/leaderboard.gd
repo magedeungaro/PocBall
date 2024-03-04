@@ -2,6 +2,7 @@ extends Node
 
 @onready var leaderboard_manager = LeaderboardManager
 @onready var player_manager = PlayerManager
+@onready var sound_manager = SoundManager
 @onready var level_name = $LevelName
 @onready var ranking = $Panel/Ranking
 @onready var player_info = $AsidePanel/PlayerInfo
@@ -11,6 +12,7 @@ const DEFAULT_TEXT = "Loading..."
 const DEFAULT_PLAYER_INFO = ""
 
 func _ready():
+	_handle_play_winning_sound()
 	_handle_continue_button()
 	ranking.text = DEFAULT_TEXT
 	level_name.text = leaderboard_manager.last_level_name
@@ -48,3 +50,7 @@ func _format_player_rank_info():
 func _handle_continue_button():
 	if not leaderboard_manager.show_continue_button:
 		continue_button.queue_free()
+		
+func _handle_play_winning_sound():
+	if leaderboard_manager.show_continue_button:
+		sound_manager.play_sound("res://scenes/sound_scenes/star_pickup_sound.tscn")

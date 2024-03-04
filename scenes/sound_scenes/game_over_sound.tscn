@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://3oe8c2r076c1"]
+
+[ext_resource type="AudioStream" uid="uid://fwy23sigjomh" path="res://assets/sound/GameOver.wav" id="1_yc407"]
+[ext_resource type="Script" path="res://scripts/AutoplayAndDeleteAudioStreamPlayer.gd" id="2_05mcv"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_yc407")
+script = ExtResource("2_05mcv")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

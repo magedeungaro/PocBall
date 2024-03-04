@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_xuq3f"]
 [ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://assets/terrains/Terrain (16x16).png" id="2_e6441"]
 [ext_resource type="Texture2D" uid="uid://d26yk3hfmaprf" path="res://assets/objects/star_finish_point.png" id="4_1qwbq"]
-[ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="4_rk1o0"]
-[ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="5_fgxtn"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud.tscn" id="4_rk1o0"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud_2.tscn" id="5_fgxtn"]
 [ext_resource type="Script" path="res://scripts/next_level_button.gd" id="8_2o0sr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xoej"]
