@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2hyf6ll6fg5o"]
+
+[ext_resource type="AudioStream" uid="uid://cmkohhk0upomb" path="res://assets/sound/FaucetCollectable.wav" id="1_735iu"]
+[ext_resource type="Script" path="res://scripts/AutoplayAndDeleteAudioStreamPlayer.gd" id="1_tja8e"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_735iu")
+script = ExtResource("1_tja8e")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
