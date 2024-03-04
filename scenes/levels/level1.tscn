@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpoh4idkfts67"]
+[gd_scene load_steps=19 format=3 uid="uid://bpoh4idkfts67"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_gnvtw"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_0o8nc"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="10_eeh8v"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="11_87c13"]
 [ext_resource type="PackedScene" path="res://scenes/faucet_collectable.tscn" id="12_e6045"]
-[ext_resource type="PackedScene" path="res://scenes/rising_water.tscn" id="12_vfolw"]
+[ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="12_vfolw"]
+[ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="13_a0yyx"]
+[ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="14_6aohf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_msrol")
@@ -2243,7 +2245,6 @@ unique_name_in_owner = true
 [node name="InfoPanel" parent="." instance=ExtResource("11_87c13")]
 
 [node name="RisingWater" parent="." instance=ExtResource("12_vfolw")]
-modulate = Color(1, 1, 1, 0.278431)
 position = Vector2(802, 1595)
 water_rising_speed = 0.01
 water_retreat_speed = 0.05
@@ -2258,3 +2259,9 @@ position = Vector2(894, 616)
 
 [node name="FaucetCollectable3" parent="FaucetCollectables" instance=ExtResource("12_e6045")]
 position = Vector2(1192, 478)
+
+[node name="Cloud1" parent="." instance=ExtResource("13_a0yyx")]
+position = Vector2(-110, 69)
+
+[node name="Cloud2" parent="." instance=ExtResource("14_6aohf")]
+position = Vector2(1921, 265)
