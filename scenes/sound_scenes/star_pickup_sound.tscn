@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bapr8ebk3y2jn"]
+
+[ext_resource type="AudioStream" uid="uid://d1y7ay7cvfc23" path="res://assets/sound/StarPickup.wav" id="1_b2hwb"]
+[ext_resource type="Script" path="res://scripts/AutoplayAndDeleteAudioStreamPlayer.gd" id="2_l3uc2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_b2hwb")
+script = ExtResource("2_l3uc2")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
