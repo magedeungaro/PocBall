@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
 @onready var audio_stream_player_2d = %AudioStreamPlayer2D
+@onready var single_boost = %SingleBoost
+@onready var double_boost = %DoubleBoost
 
 
 const SPEED = 300.0
@@ -70,6 +72,12 @@ func _is_boost_window(distance):
 func _is_calculation_window(distance):
 	if not distance: return false
 	return distance >= BOOST_THRESHOLD.up and distance <= CALCULATION_THRESHOLD and is_going_up()
+
+func _play_appropriate_bounce_sound_effect():
+	if additional_boost:
+		double_boost.play() 
+	elif boost_jump:
+		single_boost.play()
 	
 func _is_normal_animation_window(distance):
 	if not distance: return false
@@ -89,6 +97,7 @@ func _get_boost_modifier():
 	
 func _handle_jump():
 	var distance = _distance_from_floor()
+	
 	if is_on_floor(): 
 		audio_stream_player_2d.play()
 		_change_velocity()
@@ -103,6 +112,7 @@ func _handle_jump():
 
 	if _is_calculation_window(distance):
 		if boost_jump:
+			_play_appropriate_bounce_sound_effect()
 			_change_velocity(_get_boost_modifier())
 			boost_jump = false
 			if is_moving_sideways(): additional_boost = !additional_boost
