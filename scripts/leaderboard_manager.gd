@@ -20,7 +20,7 @@ var get_name_http = HTTPRequest.new()
 
 func set_leaderboard_key(key):
 	leaderboard_key = key
-	_set_level_name()
+	set_level_name()
 
 func set_show_continue_button(value : bool):
 	show_continue_button = value
@@ -28,12 +28,13 @@ func set_show_continue_button(value : bool):
 func send_player_info(info_dict):
 	last_ranking_data = null
 	leaderboard_key = info_dict.leaderboard_key
-	_set_level_name()
+	set_level_name()
 	var score = info_dict.score
 	_upload_score(score)
 	
-func _set_level_name():
-	last_level_name = leaderboard_key.replace("\\b(\\d)", " \\0")
+func set_level_name():
+	var level_number = leaderboard_key.split("level")[1]
+	last_level_name = "Level "+str(level_number)
 
 func _ready():
 	_authentication_request()

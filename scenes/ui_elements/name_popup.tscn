@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcpnxo3xorxty"]
+[gd_scene load_steps=12 format=3 uid="uid://bcpnxo3xorxty"]
 
 [ext_resource type="Texture2D" uid="uid://055ud34fwrwl" path="res://assets/backgrounds/Purple.png" id="1_tmiuk"]
 [ext_resource type="Script" path="res://scripts/name_popup.gd" id="1_x5p8n"]
@@ -9,6 +9,7 @@
 [ext_resource type="StyleBox" uid="uid://cov2e3xriccm2" path="res://styles/pink_button_hover.tres" id="5_hww1x"]
 [ext_resource type="StyleBox" uid="uid://m15woei1cfxe" path="res://styles/pink_button_pressed.tres" id="6_03lms"]
 [ext_resource type="StyleBox" uid="uid://y6twlndoorf8" path="res://styles/green_button_pressed.tres" id="6_eafnc"]
+[ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="10_nn038"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4xaw"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -113,6 +114,9 @@ theme_override_font_sizes/font_size = 60
 text = "Change your name"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Star" parent="." instance=ExtResource("10_nn038")]
+position = Vector2(560, 136)
 
 [connection signal="pressed" from="CanvasLayer/Panel/AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="." method="_on_close_button_pressed"]
