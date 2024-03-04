@@ -26,3 +26,7 @@ func _on_leaderboards_button_pressed():
 
 func _on_name_button_pressed():
 	add_child(name_input.instantiate())
+
+
+func _on_tutorial_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")

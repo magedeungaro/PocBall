@@ -3,14 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://ccfl250sq6ula" path="res://assets/backgrounds/Blue.png" id="1_4ka5a"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_kitkb"]
 [ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://assets/terrains/Terrain (16x16).png" id="3_yrfe3"]
-[ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="5_2y1ih"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud_2.tscn" id="5_2y1ih"]
 [ext_resource type="Texture2D" uid="uid://cm5fa0l7cm5ff" path="res://assets/objects/ball_jumping-Sheet.png" id="6_sqo3a"]
 [ext_resource type="PackedScene" uid="uid://brb2grbwndiaj" path="res://scenes/ui_elements/animated_water.tscn" id="6_u8fxn"]
 [ext_resource type="StyleBox" uid="uid://3huc8c245srs" path="res://styles/blue_button_normal.tres" id="7_cgwqb"]
-[ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="7_glrbr"]
-[ext_resource type="StyleBox" uid="uid://bekgskl5odne1" path="res://styles/blue_button_hover.tres" id="8_oa8u0"]
-[ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="8_slwf2"]
-[ext_resource type="StyleBox" uid="uid://d3hljsfcn1lhw" path="res://styles/blue_button_pressed.tres" id="9_dkuje"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/star.tscn" id="7_glrbr"]
+[ext_resource type="StyleBox" path="res://styles/blue_button_hover.tres" id="8_oa8u0"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud.tscn" id="8_slwf2"]
+[ext_resource type="StyleBox" path="res://styles/blue_button_pressed.tres" id="9_dkuje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1b16h"]
 resource_name = "terrain1"
@@ -345,9 +345,21 @@ theme_override_styles/hover = ExtResource("8_oa8u0")
 theme_override_styles/pressed = ExtResource("9_dkuje")
 text = "Change name"
 
+[node name="TutorialButton" type="Button" parent="Buttons"]
+texture_filter = 1
+offset_left = 488.0
+offset_top = 515.0
+offset_right = 656.0
+offset_bottom = 553.0
+theme_override_styles/normal = ExtResource("7_cgwqb")
+theme_override_styles/hover = ExtResource("8_oa8u0")
+theme_override_styles/pressed = ExtResource("9_dkuje")
+text = "Tutorial"
+
 [node name="Star" parent="." instance=ExtResource("7_glrbr")]
 
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Buttons/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
 [connection signal="pressed" from="Buttons/LeaderboardsButton" to="." method="_on_leaderboards_button_pressed"]
 [connection signal="pressed" from="Buttons/NameButton" to="." method="_on_name_button_pressed"]
+[connection signal="pressed" from="Buttons/TutorialButton" to="." method="_on_tutorial_button_pressed"]
