@@ -3,27 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://055ud34fwrwl" path="res://assets/backgrounds/Purple.png" id="1_tmiuk"]
 [ext_resource type="Script" path="res://scripts/name_popup.gd" id="1_x5p8n"]
 [ext_resource type="Script" path="res://scripts/name_input.gd" id="3_u5kx2"]
+[ext_resource type="StyleBox" uid="uid://cff3qpa0one3w" path="res://styles/green_button_normal.tres" id="4_3po52"]
+[ext_resource type="StyleBox" uid="uid://egl10b2jevs2" path="res://styles/pink_button_normal.tres" id="4_ernw6"]
+[ext_resource type="StyleBox" uid="uid://c34wgp3yj61xp" path="res://styles/green_button_hover.tres" id="5_chl20"]
+[ext_resource type="StyleBox" uid="uid://cov2e3xriccm2" path="res://styles/pink_button_hover.tres" id="5_hww1x"]
+[ext_resource type="StyleBox" uid="uid://m15woei1cfxe" path="res://styles/pink_button_pressed.tres" id="6_03lms"]
+[ext_resource type="StyleBox" uid="uid://y6twlndoorf8" path="res://styles/green_button_pressed.tres" id="6_eafnc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4xaw"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl837"]
-bg_color = Color(0, 0.529412, 0.458824, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktef4"]
-bg_color = Color(0.0823529, 0.623529, 0.552941, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ieut"]
-bg_color = Color(0, 0.380392, 0.32549, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5f1j"]
-bg_color = Color(0.564706, 0, 0.321569, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjf16"]
-bg_color = Color(0.807843, 0, 0.470588, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cedx"]
-bg_color = Color(0.411765, 0, 0.227451, 1)
 
 [node name="NamePopup" type="Node"]
 script = ExtResource("1_x5p8n")
@@ -89,9 +77,9 @@ offset_right = -34.0
 offset_bottom = 59.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_dl837")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ktef4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8ieut")
+theme_override_styles/normal = ExtResource("4_3po52")
+theme_override_styles/hover = ExtResource("5_chl20")
+theme_override_styles/pressed = ExtResource("6_eafnc")
 text = "Accept"
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/Panel"]
@@ -104,13 +92,13 @@ offset_top = 28.0
 offset_right = 134.0
 offset_bottom = 59.0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_u5f1j")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yjf16")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3cedx")
+theme_override_styles/normal = ExtResource("4_ernw6")
+theme_override_styles/hover = ExtResource("5_hww1x")
+theme_override_styles/pressed = ExtResource("6_03lms")
 text = "Cancel
 "
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Headline" type="Label" parent="CanvasLayer"]
 texture_filter = 1
 anchors_preset = 5
 anchor_left = 0.5

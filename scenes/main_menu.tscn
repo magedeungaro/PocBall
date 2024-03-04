@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwnj3iiowexyq"]
+[gd_scene load_steps=13 format=3 uid="uid://bwnj3iiowexyq"]
 
 [ext_resource type="Texture2D" uid="uid://ccfl250sq6ula" path="res://assets/backgrounds/Blue.png" id="1_4ka5a"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_kitkb"]
 [ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://assets/terrains/Terrain (16x16).png" id="3_yrfe3"]
 [ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="5_2y1ih"]
 [ext_resource type="PackedScene" uid="uid://brb2grbwndiaj" path="res://scenes/ui_elements/animated_water.tscn" id="6_u8fxn"]
+[ext_resource type="StyleBox" uid="uid://3huc8c245srs" path="res://styles/blue_button_normal.tres" id="7_cgwqb"]
 [ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="7_glrbr"]
+[ext_resource type="StyleBox" uid="uid://bekgskl5odne1" path="res://styles/blue_button_hover.tres" id="8_oa8u0"]
 [ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="8_slwf2"]
+[ext_resource type="StyleBox" uid="uid://d3hljsfcn1lhw" path="res://styles/blue_button_pressed.tres" id="9_dkuje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1b16h"]
 resource_name = "terrain1"
@@ -216,6 +219,9 @@ offset_top = 264.0
 offset_right = 656.0
 offset_bottom = 304.0
 size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("7_cgwqb")
+theme_override_styles/hover = ExtResource("8_oa8u0")
+theme_override_styles/pressed = ExtResource("9_dkuje")
 text = "Start"
 
 [node name="LevelSelectionButton" type="Button" parent="Buttons"]
@@ -225,6 +231,9 @@ offset_top = 328.0
 offset_right = 656.0
 offset_bottom = 368.0
 size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("7_cgwqb")
+theme_override_styles/hover = ExtResource("8_oa8u0")
+theme_override_styles/pressed = ExtResource("9_dkuje")
 text = "Level Selection"
 
 [node name="LeaderboardsButton" type="Button" parent="Buttons"]
@@ -234,6 +243,9 @@ offset_top = 456.0
 offset_right = 656.0
 offset_bottom = 496.0
 size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("7_cgwqb")
+theme_override_styles/hover = ExtResource("8_oa8u0")
+theme_override_styles/pressed = ExtResource("9_dkuje")
 text = "Leaderboards"
 
 [node name="NameButton" type="Button" parent="Buttons"]
@@ -242,6 +254,9 @@ offset_left = 488.0
 offset_top = 392.0
 offset_right = 656.0
 offset_bottom = 430.0
+theme_override_styles/normal = ExtResource("7_cgwqb")
+theme_override_styles/hover = ExtResource("8_oa8u0")
+theme_override_styles/pressed = ExtResource("9_dkuje")
 text = "Change Name"
 
 [node name="Star" parent="." instance=ExtResource("7_glrbr")]
