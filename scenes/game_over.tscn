@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c0dpwi2xglxb8"]
 
 [ext_resource type="Texture2D" uid="uid://b8rsi6dmy28qx" path="res://assets/objects/ball_shadow.png" id="1_a0pgg"]
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_euqaj"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_euqaj"]
 [ext_resource type="Texture2D" uid="uid://dbfuolmwm5i1" path="res://assets/objects/deflated_ball.png" id="1_ubgxn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sn7h3"]

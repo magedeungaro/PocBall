@@ -1,11 +1,12 @@
 extends Node
 @onready var player_manager = PlayerManager
+@onready var game_manager = GameManager
 @onready var name_input = preload("res://scenes/ui_elements/name_popup.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	game_manager.disable_reset_buttons()
 	if not player_manager.player_info.name:
 		add_child(name_input.instantiate())
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

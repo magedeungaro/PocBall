@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpoh4idkfts67"]
+[gd_scene load_steps=21 format=3 uid="uid://bpoh4idkfts67"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_gnvtw"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_0o8nc"]
@@ -14,6 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="12_vfolw"]
 [ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="13_a0yyx"]
 [ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="14_6aohf"]
+[ext_resource type="PackedScene" uid="uid://lbs5x74bqe1s" path="res://scenes/utils/input_handler.tscn" id="15_gv47d"]
+
+[sub_resource type="GDScript" id="GDScript_akut0"]
+script/source = "extends Node
+@onready var game_manager = GameManager
+
+func _ready():
+	game_manager.enable_reset_buttons()
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_msrol")
@@ -2197,6 +2206,7 @@ sources/1 = SubResource("TileSetAtlasSource_ekkng")
 sources/2 = SubResource("TileSetAtlasSource_1u082")
 
 [node name="Level1" type="Node"]
+script = SubResource("GDScript_akut0")
 metadata/_edit_vertical_guides_ = [1021.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -2265,3 +2275,5 @@ position = Vector2(-110, 69)
 
 [node name="Cloud2" parent="." instance=ExtResource("14_6aohf")]
 position = Vector2(1921, 265)
+
+[node name="InputHandler" parent="." instance=ExtResource("15_gv47d")]

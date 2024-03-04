@@ -2,6 +2,7 @@ extends Node
 
 @onready var leaderboard_manager = LeaderboardManager
 @onready var player_manager = PlayerManager
+@onready var game_manager = GameManager
 @onready var level_name = $LevelName
 @onready var ranking = $Panel/Ranking
 @onready var player_info = $AsidePanel/PlayerInfo
@@ -15,6 +16,7 @@ func _ready():
 	ranking.text = DEFAULT_TEXT
 	level_name.text = leaderboard_manager.last_level_name
 	_handle_display_player_info()
+	game_manager.disable_reset_buttons()
 
 func _process(_delta):
 	_handle_display_leaderboard_info()

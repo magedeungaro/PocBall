@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dsinq1nwdtsle"]
+[gd_scene load_steps=21 format=3 uid="uid://dsinq1nwdtsle"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_g6w7s"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_ijkcq"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="10_0tgd0"]
 [ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="11_lxv8i"]
 [ext_resource type="PackedScene" path="res://scenes/faucet_collectable.tscn" id="12_kgw74"]
+[ext_resource type="PackedScene" uid="uid://lbs5x74bqe1s" path="res://scenes/utils/input_handler.tscn" id="15_uxy5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
 texture = ExtResource("3_uhw4r")
@@ -2733,3 +2734,5 @@ water_retreat_speed = 0.05
 
 [node name="FaucetCollectable" parent="FaucetCollectables" instance=ExtResource("12_kgw74")]
 position = Vector2(709, 654)
+
+[node name="InputHandler" parent="." instance=ExtResource("15_uxy5k")]
