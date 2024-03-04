@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddcyqj5noax2o"]
+
+[ext_resource type="Texture2D" uid="uid://byak6atydogyu" path="res://assets/backgrounds/Small Cloud 1.png" id="1_voh1e"]
+[ext_resource type="Script" path="res://scripts/cloud_2.gd" id="2_0wpym"]
+
+[node name="Cloud2" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(1094, 89)
+scale = Vector2(3.56786, 3.56786)
+texture = ExtResource("1_voh1e")
+script = ExtResource("2_0wpym")
