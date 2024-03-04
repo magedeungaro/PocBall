@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://u2cwbkfk054e"]
+
+[ext_resource type="Script" path="res://scripts/leaderboard_selection.gd" id="1_hs65y"]
+[ext_resource type="Texture2D" uid="uid://cxwvjwdgm3lc3" path="res://assets/backgrounds/Green.png" id="1_lvc6j"]
+[ext_resource type="StyleBox" uid="uid://cff3qpa0one3w" path="res://styles/green_button_normal.tres" id="3_6wp6j"]
+[ext_resource type="PackedScene" uid="uid://3al8w0hrbbmw" path="res://scenes/ui_elements/snapshots.tscn" id="3_jnjng"]
+[ext_resource type="StyleBox" uid="uid://c34wgp3yj61xp" path="res://styles/green_button_hover.tres" id="4_fhs4e"]
+[ext_resource type="StyleBox" uid="uid://y6twlndoorf8" path="res://styles/green_button_pressed.tres" id="5_piu1v"]
+[ext_resource type="PackedScene" uid="uid://8rynm2qyf4qm" path="res://scenes/ui_elements/leaderboard_level_button.tscn" id="6_akabr"]
+[ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="8_rt1oc"]
+
+[node name="LeaderboardSelection" type="Node"]
+script = ExtResource("1_hs65y")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lvc6j")
+stretch_mode = 1
+
+[node name="Title" type="Label" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 48.0
+offset_right = 231.0
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.247059, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "leaderboards"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="snapshots" parent="." instance=ExtResource("3_jnjng")]
+
+[node name="buttons" type="Node" parent="."]
+
+[node name="BackButton" type="Button" parent="buttons"]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 128.0
+offset_bottom = 47.0
+theme_override_styles/normal = ExtResource("3_6wp6j")
+theme_override_styles/hover = ExtResource("4_fhs4e")
+theme_override_styles/pressed = ExtResource("5_piu1v")
+text = "Back"
+
+[node name="LeaderBoardButton" parent="buttons" instance=ExtResource("6_akabr")]
+offset_left = 103.0
+offset_right = 215.0
+
+[node name="LeaderBoardButton2" parent="buttons" instance=ExtResource("6_akabr")]
+offset_left = 512.0
+offset_right = 624.0
+text = "Level 2"
+leaderboard = "level2"
+
+[node name="LeaderBoardButton3" parent="buttons" instance=ExtResource("6_akabr")]
+offset_left = 942.0
+offset_right = 1054.0
+text = "Level 3"
+leaderboard = "level3"
+
+[node name="LeaderBoardButton4" parent="buttons" instance=ExtResource("6_akabr")]
+offset_left = 297.0
+offset_top = 528.0
+offset_right = 409.0
+offset_bottom = 559.0
+text = "Level 4"
+leaderboard = "level4"
+
+[node name="LeaderBoardButton5" parent="buttons" instance=ExtResource("6_akabr")]
+offset_left = 736.0
+offset_top = 528.0
+offset_right = 848.0
+offset_bottom = 559.0
+text = "Level 5"
+leaderboard = "level5"
+
+[node name="Star" parent="." instance=ExtResource("8_rt1oc")]
+position = Vector2(800, 224)
+
+[node name="Star2" parent="." instance=ExtResource("8_rt1oc")]
+position = Vector2(352, 224)
+
+[node name="Star3" parent="." instance=ExtResource("8_rt1oc")]
+position = Vector2(560, 440)
+
+[connection signal="pressed" from="buttons/BackButton" to="." method="_on_back_button_pressed"]

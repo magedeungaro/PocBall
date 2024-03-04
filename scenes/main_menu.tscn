@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwnj3iiowexyq"]
+[gd_scene load_steps=10 format=3 uid="uid://bwnj3iiowexyq"]
 
 [ext_resource type="Texture2D" uid="uid://ccfl250sq6ula" path="res://assets/backgrounds/Blue.png" id="1_4ka5a"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_kitkb"]
 [ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://assets/terrains/Terrain (16x16).png" id="3_yrfe3"]
-[ext_resource type="Texture2D" uid="uid://d26yk3hfmaprf" path="res://assets/objects/star_finish_point.png" id="4_nhlau"]
 [ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="5_2y1ih"]
 [ext_resource type="PackedScene" uid="uid://brb2grbwndiaj" path="res://scenes/ui_elements/animated_water.tscn" id="6_u8fxn"]
+[ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="7_glrbr"]
 [ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="8_slwf2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1b16h"]
@@ -159,49 +159,6 @@ texture = ExtResource("3_yrfe3")
 [sub_resource type="TileSet" id="TileSet_oiu7s"]
 sources/0 = SubResource("TileSetAtlasSource_1b16h")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uersj"]
-atlas = ExtResource("4_nhlau")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wivvy"]
-atlas = ExtResource("4_nhlau")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_74i6j"]
-atlas = ExtResource("4_nhlau")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_08now"]
-atlas = ExtResource("4_nhlau")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k4lm4"]
-atlas = ExtResource("4_nhlau")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4jgys"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uersj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wivvy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_74i6j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_08now")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k4lm4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 9.0
-}]
-
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_kitkb")
 
@@ -287,12 +244,7 @@ offset_right = 656.0
 offset_bottom = 430.0
 text = "Change Name"
 
-[node name="Star" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1080, 88)
-sprite_frames = SubResource("SpriteFrames_4jgys")
-autoplay = "default"
-frame_progress = 0.773037
+[node name="Star" parent="." instance=ExtResource("7_glrbr")]
 
 [connection signal="pressed" from="Buttons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Buttons/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]

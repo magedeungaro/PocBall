@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://8rynm2qyf4qm"]
+
+[ext_resource type="StyleBox" uid="uid://cff3qpa0one3w" path="res://styles/green_button_normal.tres" id="1_q8oss"]
+[ext_resource type="StyleBox" uid="uid://c34wgp3yj61xp" path="res://styles/green_button_hover.tres" id="2_rmmuq"]
+[ext_resource type="StyleBox" uid="uid://y6twlndoorf8" path="res://styles/green_button_pressed.tres" id="3_1x3y0"]
+[ext_resource type="Script" path="res://scripts/leaderboard_level_button.gd" id="4_xod4a"]
+
+[node name="LeaderBoardButton" type="Button"]
+texture_filter = 1
+offset_left = 104.0
+offset_top = 296.0
+offset_right = 216.0
+offset_bottom = 327.0
+theme_override_styles/normal = ExtResource("1_q8oss")
+theme_override_styles/hover = ExtResource("2_rmmuq")
+theme_override_styles/pressed = ExtResource("3_1x3y0")
+text = "Level 1"
+script = ExtResource("4_xod4a")
+leaderboard = "level1"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

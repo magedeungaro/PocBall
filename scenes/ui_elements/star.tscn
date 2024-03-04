@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://80sfkd1fl4w7"]
+
+[ext_resource type="Texture2D" uid="uid://d26yk3hfmaprf" path="res://assets/objects/star_finish_point.png" id="1_hphnt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uersj"]
+atlas = ExtResource("1_hphnt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivvy"]
+atlas = ExtResource("1_hphnt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74i6j"]
+atlas = ExtResource("1_hphnt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08now"]
+atlas = ExtResource("1_hphnt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4lm4"]
+atlas = ExtResource("1_hphnt")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jgys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uersj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wivvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74i6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08now")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4lm4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Star" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(1080, 88)
+sprite_frames = SubResource("SpriteFrames_4jgys")
+autoplay = "default"
+frame_progress = 0.773037
