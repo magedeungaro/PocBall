@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ha08nhgvo2jf"]
+[gd_scene load_steps=8 format=3 uid="uid://6nfiy8sr55d0"]
 
 [ext_resource type="Script" path="res://scenes/tutorial.gd" id="1_86fbu"]
-[ext_resource type="Texture2D" uid="uid://duai1lnqijxve" path="res://assets/backgrounds/Pink.png" id="2_pu6pg"]
-[ext_resource type="PackedScene" path="res://scenes/ui_elements/star.tscn" id="3_pfldj"]
-[ext_resource type="StyleBox" path="res://styles/pink_button_normal.tres" id="5_8pfrb"]
-[ext_resource type="StyleBox" path="res://styles/pink_button_hover.tres" id="6_gcsbm"]
+[ext_resource type="Texture2D" uid="uid://dekfo6hvdy7ir" path="res://assets/backgrounds/Brown.png" id="2_r2var"]
+[ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="3_pfldj"]
+[ext_resource type="StyleBox" uid="uid://bqu4thmpord4" path="res://styles/brown_button_normal.tres" id="4_ysh2h"]
+[ext_resource type="StyleBox" uid="uid://do0sgwhncylp3" path="res://styles/brown_button_hover.tres" id="5_uv0og"]
+[ext_resource type="StyleBox" uid="uid://dydxd8u5vo866" path="res://styles/brown_button_pressed.tres" id="6_16y3j"]
 [ext_resource type="Texture2D" uid="uid://07y8fk0adajr" path="res://assets/snapshots/Tutorial slide 1.png" id="7_5pecx"]
-[ext_resource type="StyleBox" path="res://styles/pink_button_pressed.tres" id="7_imli1"]
 
 [node name="Tutorial" type="Node"]
 script = ExtResource("1_86fbu")
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pu6pg")
+texture = ExtResource("2_r2var")
 stretch_mode = 1
 
 [node name="Title" type="Label" parent="Background"]
@@ -32,7 +32,7 @@ offset_top = 32.0
 offset_right = 209.0
 offset_bottom = 115.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.556863, 0, 0.388235, 1)
+theme_override_colors/font_color = Color(0.32549, 0.160784, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Tutorial"
 horizontal_alignment = 1
@@ -50,9 +50,9 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 112.0
 offset_bottom = 47.0
-theme_override_styles/normal = ExtResource("5_8pfrb")
-theme_override_styles/hover = ExtResource("6_gcsbm")
-theme_override_styles/pressed = ExtResource("7_imli1")
+theme_override_styles/normal = ExtResource("4_ysh2h")
+theme_override_styles/hover = ExtResource("5_uv0og")
+theme_override_styles/pressed = ExtResource("6_16y3j")
 text = "Back"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -76,9 +76,9 @@ offset_left = 410.0
 offset_top = 545.0
 offset_right = 533.0
 offset_bottom = 576.0
-theme_override_styles/normal = ExtResource("5_8pfrb")
-theme_override_styles/hover = ExtResource("6_gcsbm")
-theme_override_styles/pressed = ExtResource("7_imli1")
+theme_override_styles/normal = ExtResource("4_ysh2h")
+theme_override_styles/hover = ExtResource("5_uv0og")
+theme_override_styles/pressed = ExtResource("6_16y3j")
 text = "Previous Slide"
 
 [node name="NextSlide" type="Button" parent="."]
@@ -87,9 +87,9 @@ offset_left = 641.0
 offset_top = 545.0
 offset_right = 737.0
 offset_bottom = 576.0
-theme_override_styles/normal = ExtResource("5_8pfrb")
-theme_override_styles/hover = ExtResource("6_gcsbm")
-theme_override_styles/pressed = ExtResource("7_imli1")
+theme_override_styles/normal = ExtResource("4_ysh2h")
+theme_override_styles/hover = ExtResource("5_uv0og")
+theme_override_styles/pressed = ExtResource("6_16y3j")
 text = "Next Slide"
 
 [node name="CurrentSlide" type="Label" parent="."]
