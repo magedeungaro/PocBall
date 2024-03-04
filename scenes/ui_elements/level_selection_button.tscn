@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ockxhs6ydps"]
+
+[ext_resource type="StyleBox" uid="uid://egl10b2jevs2" path="res://styles/pink_button_normal.tres" id="1_jp3kf"]
+[ext_resource type="StyleBox" uid="uid://cov2e3xriccm2" path="res://styles/pink_button_hover.tres" id="2_qnt17"]
+[ext_resource type="StyleBox" uid="uid://m15woei1cfxe" path="res://styles/pink_button_pressed.tres" id="3_v43t2"]
+[ext_resource type="Script" path="res://scripts/level_selection_button.gd" id="4_nnqcm"]
+
+[node name="LevelSelectionButton" type="Button"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 39.0
+theme_override_styles/normal = ExtResource("1_jp3kf")
+theme_override_styles/hover = ExtResource("2_qnt17")
+theme_override_styles/pressed = ExtResource("3_v43t2")
+text = "Level 1"
+script = ExtResource("4_nnqcm")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

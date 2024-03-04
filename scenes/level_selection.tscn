@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://boisxucrqipt4"]
+
+[ext_resource type="Script" path="res://scripts/level_selection.gd" id="1_m64yg"]
+[ext_resource type="Texture2D" uid="uid://duai1lnqijxve" path="res://assets/backgrounds/Pink.png" id="1_osex4"]
+[ext_resource type="PackedScene" uid="uid://80sfkd1fl4w7" path="res://scenes/ui_elements/star.tscn" id="2_4s0ss"]
+[ext_resource type="PackedScene" uid="uid://3al8w0hrbbmw" path="res://scenes/ui_elements/snapshots.tscn" id="3_n2c4w"]
+[ext_resource type="PackedScene" uid="uid://c2ockxhs6ydps" path="res://scenes/ui_elements/level_selection_button.tscn" id="4_11uay"]
+[ext_resource type="StyleBox" uid="uid://egl10b2jevs2" path="res://styles/pink_button_normal.tres" id="4_wvpn1"]
+[ext_resource type="StyleBox" uid="uid://cov2e3xriccm2" path="res://styles/pink_button_hover.tres" id="5_embre"]
+[ext_resource type="PackedScene" uid="uid://bpoh4idkfts67" path="res://scenes/levels/level1.tscn" id="5_rkkxu"]
+[ext_resource type="PackedScene" uid="uid://cbyp3iewyy581" path="res://scenes/levels/level2.tscn" id="6_bvh20"]
+[ext_resource type="StyleBox" uid="uid://m15woei1cfxe" path="res://styles/pink_button_pressed.tres" id="6_ykrvp"]
+[ext_resource type="PackedScene" uid="uid://dsinq1nwdtsle" path="res://scenes/levels/level3.tscn" id="7_n2n1j"]
+[ext_resource type="PackedScene" uid="uid://sn2m5n4vwr01" path="res://scenes/levels/level4.tscn" id="8_cuy85"]
+[ext_resource type="PackedScene" uid="uid://dmpnha8em11lv" path="res://scenes/levels/level5.tscn" id="9_bsjws"]
+
+[node name="LevelSelection" type="Node"]
+script = ExtResource("1_m64yg")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_osex4")
+stretch_mode = 1
+
+[node name="Title" type="Label" parent="Background"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 32.0
+offset_right = 209.0
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.556863, 0, 0.388235, 1)
+theme_override_font_sizes/font_size = 60
+text = "Choose a level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Star" parent="." instance=ExtResource("2_4s0ss")]
+position = Vector2(848, 85)
+
+[node name="Star2" parent="." instance=ExtResource("2_4s0ss")]
+position = Vector2(301, 88)
+
+[node name="snapshots" parent="." instance=ExtResource("3_n2c4w")]
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 47.0
+theme_override_styles/normal = ExtResource("4_wvpn1")
+theme_override_styles/hover = ExtResource("5_embre")
+theme_override_styles/pressed = ExtResource("6_ykrvp")
+text = "Back"
+
+[node name="LevelSelectionButton" parent="." instance=ExtResource("4_11uay")]
+offset_left = 109.0
+offset_top = 288.0
+offset_right = 213.0
+offset_bottom = 319.0
+target_level = ExtResource("5_rkkxu")
+
+[node name="LevelSelectionButton2" parent="." instance=ExtResource("4_11uay")]
+offset_left = 516.0
+offset_top = 288.0
+offset_right = 620.0
+offset_bottom = 319.0
+text = "Level 2"
+target_level = ExtResource("6_bvh20")
+
+[node name="LevelSelectionButton3" parent="." instance=ExtResource("4_11uay")]
+offset_left = 944.0
+offset_top = 288.0
+offset_right = 1048.0
+offset_bottom = 319.0
+text = "Level 3"
+target_level = ExtResource("7_n2n1j")
+
+[node name="LevelSelectionButton4" parent="." instance=ExtResource("4_11uay")]
+offset_left = 305.0
+offset_top = 520.0
+offset_right = 409.0
+offset_bottom = 551.0
+text = "Level 4"
+target_level = ExtResource("8_cuy85")
+
+[node name="LevelSelectionButton5" parent="." instance=ExtResource("4_11uay")]
+offset_left = 741.0
+offset_top = 520.0
+offset_right = 845.0
+offset_bottom = 551.0
+text = "Level 5"
+target_level = ExtResource("9_bsjws")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
