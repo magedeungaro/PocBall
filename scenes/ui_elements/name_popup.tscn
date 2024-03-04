@@ -110,5 +110,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3cedx")
 text = "Cancel
 "
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.0
+offset_top = 176.0
+offset_right = 275.0
+offset_bottom = 259.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.564706, 0, 0.321569, 1)
+theme_override_font_sizes/font_size = 60
+text = "Change your name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="CanvasLayer/Panel/AcceptButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="." method="_on_close_button_pressed"]
