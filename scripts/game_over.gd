@@ -1,11 +1,12 @@
 extends Node
 @onready var leaderboard_manager = LeaderboardManager
 @onready var game_manager = GameManager
+@onready var sound_manager = SoundManager
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	game_manager.disable_reset_buttons()
+	sound_manager.play_sound("res://scenes/sound_scenes/game_over_sound.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
