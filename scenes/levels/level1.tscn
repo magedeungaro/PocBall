@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bpoh4idkfts67"]
+[gd_scene load_steps=22 format=3 uid="uid://bpoh4idkfts67"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_gnvtw"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_0o8nc"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://cobkps43hxrcj" path="res://scenes/ball_character.tscn" id="7_3aobc"]
 [ext_resource type="PackedScene" uid="uid://boabsegwyjy2h" path="res://scenes/star_finish_point.tscn" id="8_6m63v"]
 [ext_resource type="PackedScene" uid="uid://4c8avmtkv4ew" path="res://scenes/leaderboard.tscn" id="8_pmq67"]
+[ext_resource type="PackedScene" uid="uid://c7c5fps7jrtud" path="res://scenes/ui_elements/ui_controller_keys_helper.tscn" id="10_2v4cq"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="10_eeh8v"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="11_87c13"]
-[ext_resource type="PackedScene" path="res://scenes/faucet_collectable.tscn" id="12_e6045"]
+[ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_e6045"]
 [ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="12_vfolw"]
-[ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="13_a0yyx"]
-[ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="14_6aohf"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud.tscn" id="13_a0yyx"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud_2.tscn" id="14_6aohf"]
 [ext_resource type="PackedScene" uid="uid://lbs5x74bqe1s" path="res://scenes/utils/input_handler.tscn" id="15_gv47d"]
 
 [sub_resource type="GDScript" id="GDScript_akut0"]
@@ -2248,6 +2249,8 @@ target_level = ExtResource("8_pmq67")
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(0.705, 0.705)
+
+[node name="UiControllerKeysHelper" parent="." instance=ExtResource("10_2v4cq")]
 
 [node name="CountUpTimer" parent="." instance=ExtResource("10_eeh8v")]
 unique_name_in_owner = true

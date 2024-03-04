@@ -1,0 +1,147 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7c5fps7jrtud"]
+
+[ext_resource type="Texture2D" uid="uid://b31mhni0gb5xy" path="res://assets/objects/North Button UI Helper.png" id="1_6cl0d"]
+[ext_resource type="Texture2D" uid="uid://cs8lbv68m64td" path="res://assets/objects/Back Button UI Helper.png" id="2_fg0f2"]
+[ext_resource type="Texture2D" uid="uid://w301aqden4y3" path="res://assets/objects/South Button UI Helper.png" id="3_gof0w"]
+
+[node name="UiControllerKeysHelper" type="Node"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Restart" type="Node" parent="CanvasLayer"]
+
+[node name="ControllerKeyHelperLabel4" type="Label" parent="CanvasLayer/Restart"]
+texture_filter = 1
+offset_left = 55.0
+offset_top = -2.0
+offset_right = 97.0
+offset_bottom = 53.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControllerKeyHelperLabel" type="Label" parent="CanvasLayer/Restart"]
+texture_filter = 1
+offset_left = 120.0
+offset_top = 10.0
+offset_right = 218.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "-  Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Restart"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 5.0
+offset_right = 64.0
+offset_bottom = 45.0
+texture = ExtResource("1_6cl0d")
+
+[node name="ControllerKeyHelperLabel5" type="Label" parent="CanvasLayer/Restart"]
+texture_filter = 1
+offset_left = 79.0
+offset_top = 10.0
+offset_right = 117.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Node" parent="CanvasLayer"]
+
+[node name="ControllerKeyHelperLabel4" type="Label" parent="CanvasLayer/Quit"]
+texture_filter = 1
+offset_left = 276.0
+offset_top = -2.0
+offset_right = 318.0
+offset_bottom = 53.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControllerKeyHelperLabel" type="Label" parent="CanvasLayer/Quit"]
+texture_filter = 1
+offset_left = 342.0
+offset_top = 10.0
+offset_right = 403.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "-  Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Quit"]
+texture_filter = 1
+offset_left = 245.0
+offset_top = 5.0
+offset_right = 285.0
+offset_bottom = 45.0
+texture = ExtResource("2_fg0f2")
+
+[node name="ControllerKeyHelperLabel5" type="Label" parent="CanvasLayer/Quit"]
+texture_filter = 1
+offset_left = 300.0
+offset_top = 10.0
+offset_right = 338.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Boost" type="Node" parent="CanvasLayer"]
+
+[node name="ControllerKeyHelperLabel4" type="Label" parent="CanvasLayer/Boost"]
+texture_filter = 1
+offset_left = 469.0
+offset_top = -2.0
+offset_right = 511.0
+offset_bottom = 53.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControllerKeyHelperLabel" type="Label" parent="CanvasLayer/Boost"]
+texture_filter = 1
+offset_left = 615.0
+offset_top = 10.0
+offset_right = 695.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "-  Boost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Boost"]
+texture_filter = 1
+offset_left = 438.0
+offset_top = 5.0
+offset_right = 478.0
+offset_bottom = 45.0
+texture = ExtResource("3_gof0w")
+
+[node name="ControllerKeyHelperLabel5" type="Label" parent="CanvasLayer/Boost"]
+texture_filter = 1
+offset_left = 504.0
+offset_top = 10.0
+offset_right = 604.0
+offset_bottom = 41.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 22
+text = "SpaceBar"
+horizontal_alignment = 1
+vertical_alignment = 1

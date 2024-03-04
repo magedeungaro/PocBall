@@ -1,19 +1,20 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmpnha8em11lv"]
+[gd_scene load_steps=22 format=3 uid="uid://dmpnha8em11lv"]
 
 [ext_resource type="Texture2D" uid="uid://c4t8ijxfrxnkm" path="res://assets/backgrounds/BG Image.png" id="1_s6a8a"]
 [ext_resource type="Texture2D" uid="uid://bxrdxfc1ejahy" path="res://assets/backgrounds/Back Palm Tree Left 03.png" id="2_avjby"]
 [ext_resource type="Texture2D" uid="uid://b31yqq8x52g4n" path="res://assets/terrains/Terrain (16x16).png" id="3_jb8cg"]
 [ext_resource type="Texture2D" uid="uid://bqh67xaomp6rs" path="res://assets/terrains/Terrain and Back Wall (32x32).png" id="4_ehqsc"]
 [ext_resource type="Texture2D" uid="uid://thpsasgsng3o" path="res://assets/terrains/Terrain (32x32).png" id="5_ujskk"]
-[ext_resource type="PackedScene" uid="uid://cdbqkdijxkv7b" path="res://scenes/ui_elements/cloud.tscn" id="6_1ihp4"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud.tscn" id="6_1ihp4"]
 [ext_resource type="PackedScene" uid="uid://cobkps43hxrcj" path="res://scenes/ball_character.tscn" id="6_6gjed"]
 [ext_resource type="PackedScene" uid="uid://boabsegwyjy2h" path="res://scenes/star_finish_point.tscn" id="7_jvrvw"]
-[ext_resource type="PackedScene" uid="uid://ddcyqj5noax2o" path="res://scenes/ui_elements/cloud_2.tscn" id="7_y7x2g"]
+[ext_resource type="PackedScene" path="res://scenes/ui_elements/cloud_2.tscn" id="7_y7x2g"]
 [ext_resource type="PackedScene" uid="uid://4c8avmtkv4ew" path="res://scenes/leaderboard.tscn" id="8_kphvv"]
 [ext_resource type="PackedScene" uid="uid://b7qcjp7ypcvtq" path="res://scenes/ui_elements/count_up_timer.tscn" id="9_ebkld"]
 [ext_resource type="PackedScene" uid="uid://dpjvj5fx3kp25" path="res://scenes/ui_elements/info_panel.tscn" id="10_nx2b8"]
+[ext_resource type="PackedScene" uid="uid://c7c5fps7jrtud" path="res://scenes/ui_elements/ui_controller_keys_helper.tscn" id="11_iql1f"]
 [ext_resource type="PackedScene" uid="uid://8rax1mp3u2dx" path="res://scenes/rising_water.tscn" id="11_t1nip"]
-[ext_resource type="PackedScene" path="res://scenes/faucet_collectable.tscn" id="12_f4ka2"]
+[ext_resource type="PackedScene" uid="uid://gr1et4w7vt3m" path="res://scenes/faucet_collectable.tscn" id="12_f4ka2"]
 [ext_resource type="PackedScene" uid="uid://lbs5x74bqe1s" path="res://scenes/utils/input_handler.tscn" id="15_kaypf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4jwf8"]
@@ -2710,6 +2711,8 @@ target_level = ExtResource("8_kphvv")
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(0.705, 0.705)
+
+[node name="UiControllerKeysHelper" parent="." instance=ExtResource("11_iql1f")]
 
 [node name="CountUpTimer" parent="." instance=ExtResource("9_ebkld")]
 unique_name_in_owner = true
